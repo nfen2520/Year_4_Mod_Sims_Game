@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://clh83g5l2a075"]
+
+[ext_resource type="Script" uid="uid://btbffgblmcoxe" path="res://Scenes/loading_screen.gd" id="1_oobaa"]
+
+[node name="Loading_Screen" type="Panel" unique_id=865970846]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_oobaa")
+
+[node name="Timer" type="Timer" parent="." unique_id=1668476136]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

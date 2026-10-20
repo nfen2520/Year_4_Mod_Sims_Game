@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://6vt2jr10vwk6"]
+
+[ext_resource type="ArrayMesh" uid="uid://buec7uobbsww2" path="res://scripts/Crab Game/Leaves2.obj" id="1_7cmys"]
+[ext_resource type="Script" uid="uid://lfc654ogx50b" path="res://Worlds/interactable.gd" id="1_ligs6"]
+[ext_resource type="ArrayMesh" uid="uid://qpquwtdoe62t" path="res://scripts/Crab Game/Trunk3.obj" id="2_ligs6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40vw2"]
+albedo_color = Color(0.19232938, 0.57891816, 0.17980987, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_27g7l"]
+albedo_color = Color(0.4842164, 0.2059276, 0.07142133, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_27g7l"]
+height = 23.752686
+radius = 1.9790039
+
+[node name="newTree" type="StaticBody3D" unique_id=397061814 groups=["Interactable"]]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+script = ExtResource("1_ligs6")
+jsonsrc = "res://Scenes/Dialogue/Intro_Die.json"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=131134640]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("1_7cmys")
+surface_material_override/0 = SubResource("StandardMaterial3D_40vw2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=265566109]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = ExtResource("2_ligs6")
+surface_material_override/0 = SubResource("StandardMaterial3D_27g7l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1429801937]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.842163, 0)
+shape = SubResource("CylinderShape3D_27g7l")

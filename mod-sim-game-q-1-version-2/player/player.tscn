@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://bvfpkendh4ai8"]
+
+[ext_resource type="Script" uid="uid://br6to3cwe0aq" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="PackedScene" uid="uid://b2qtvxnnhpro1" path="res://scripts/bullet.tscn" id="2_g6k8r"]
+[ext_resource type="PackedScene" uid="uid://p73fyh2x6ins" path="res://Worlds/pause_menu.tscn" id="2_yw30f"]
+[ext_resource type="Texture2D" uid="uid://bgq853321pwek" path="res://player/reticle.png" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://d34dyvc7kpft2" path="res://Scenes/Dialogue/dialogue_manager.tscn" id="3_yw30f"]
+[ext_resource type="Script" uid="uid://cvb03blghax34" path="res://player/score_value.gd" id="5_qjkh3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kclpp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kclpp"]
+radius = 2.5644531
+
+[node name="Player" type="CharacterBody3D" unique_id=1186603845 node_paths=PackedStringArray("interact", "shoot", "dot", "bar")]
+script = ExtResource("1_rkbax")
+bullet = ExtResource("2_g6k8r")
+interact = NodePath("CanvasLayer")
+shoot = NodePath("Camera3D/Marker3D")
+dot = NodePath("Reticle")
+bar = NodePath("Label")
+
+[node name="PauseMenu" parent="." unique_id=1859757965 instance=ExtResource("2_yw30f")]
+process_mode = 3
+layer = 10
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=347794267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0063183, 0)
+shape = SubResource("CapsuleShape3D_kclpp")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=786723866]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5672088, 0)
+
+[node name="Marker3D" type="Marker3D" parent="Camera3D" unique_id=416482580]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.440413, -0.2698201, -0.61382866)
+
+[node name="Reticle" type="TextureRect" parent="." unique_id=1892826390]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g1dw6")
+expand_mode = 1
+
+[node name="PlayerReach" type="Area3D" parent="." unique_id=9744925 groups=["Not_player"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerReach" unique_id=2051859514]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.0222962, 0)
+shape = SubResource("CylinderShape3D_kclpp")
+
+[node name="Dialogue_Manager" parent="." unique_id=1306491053 node_paths=PackedStringArray("pause_menu") instance=ExtResource("3_yw30f")]
+pause_menu = NodePath("../PauseMenu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1477464275]
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1269148137]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_right = 131.0
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Press E to interact"
+
+[node name="Label" type="Label" parent="." unique_id=1660653156]
+offset_left = 34.0
+offset_top = 23.0
+offset_right = 129.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+script = ExtResource("5_qjkh3")
+
+[connection signal="dialogue_start" from="." to="Dialogue_Manager" method="_on_player_dialogue_start"]
+[connection signal="light" from="." to="Dialogue_Manager" method="_on_player_light"]
+[connection signal="pause" from="." to="PauseMenu" method="_on_player_pause"]
+[connection signal="pause" from="PauseMenu" to="." method="_on_pause_menu_pause"]
+[connection signal="play" from="PauseMenu" to="." method="_on_pause_menu_play"]
+[connection signal="save" from="PauseMenu" to="." method="_on_pause_menu_save"]
+[connection signal="body_entered" from="PlayerReach" to="." method="_on_player_reach_body_entered"]
+[connection signal="body_exited" from="PlayerReach" to="." method="_on_player_reach_body_exited"]
+[connection signal="menu" from="Dialogue_Manager" to="PauseMenu" method="_on_dialogue_manager_menu"]
+[connection signal="pause" from="Dialogue_Manager" to="." method="_on_dialogue_manager_pause"]
+[connection signal="play" from="Dialogue_Manager" to="." method="_on_dialogue_manager_play"]

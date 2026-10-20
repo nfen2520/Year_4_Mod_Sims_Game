@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bvol2kte0bjsr"]
+
+[ext_resource type="Material" uid="uid://c4xxu2o7b6vq4" path="res://level/Platform.tres" id="1_7ik0a"]
+[ext_resource type="Script" uid="uid://dee15nsw562m7" path="res://Worlds/World_proccess.gd" id="1_j10ut"]
+[ext_resource type="PackedScene" uid="uid://6vt2jr10vwk6" path="res://Worlds/new_tree.tscn" id="4_cejfp"]
+[ext_resource type="PackedScene" uid="uid://763rg2qvj1tg" path="res://apple.tscn" id="4_x43jg"]
+[ext_resource type="PackedScene" uid="uid://bl1846ulp4kkk" path="res://Scenes/portal_to_scene.tscn" id="5_x43jg"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cejfp"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_x43jg"]
+sky_material = SubResource("ProceduralSkyMaterial_cejfp")
+
+[sub_resource type="Environment" id="Environment_j10ut"]
+background_mode = 2
+sky = SubResource("Sky_x43jg")
+glow_enabled = true
+
+[node name="Tower" type="Node3D" unique_id=857543120 node_paths=PackedStringArray("spawn")]
+script = ExtResource("1_j10ut")
+spawn = NodePath("Marker3D")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=303847639]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=326625340]
+environment = SubResource("Environment_j10ut")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=836188650]
+transform = Transform3D(2.427288, 0, 0, 0, 1, 0, 0, 0, 2.3056245, 0, -5.1512775, 1)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_7ik0a")
+
+[node name="Apple" parent="." unique_id=679075548 groups=["Collectable"] instance=ExtResource("4_x43jg")]
+transform = Transform3D(0.999852, -0.0055982242, 0.016267037, 0.0048060096, 0.9988195, 0.04833896, -0.016518442, -0.04825363, 0.99869853, 7.5369787, 0.26211214, 7.523609)
+
+[node name="Apple2" parent="." unique_id=1872325421 groups=["Collectable"] instance=ExtResource("4_x43jg")]
+transform = Transform3D(4.0144057, -0.02247693, 0.06531214, 0.019296128, 4.0102596, 0.19408092, -0.066321544, -0.19373831, 4.0097747, -9.041635, 1.4694498, 7.523609)
+value = 6
+
+[node name="newTree" parent="." unique_id=397061814 instance=ExtResource("4_cejfp")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.463109, -0.15127724, -8.913364)
+
+[node name="PortalToScene" parent="." unique_id=534343936 instance=ExtResource("5_x43jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3194895, 0, 0)
+
+[node name="PortalToScene2" parent="." unique_id=92662499 instance=ExtResource("5_x43jg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.000812, -0.15127754, -8.77194)
+scene = 2
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=899716175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.153597, 0, 0)

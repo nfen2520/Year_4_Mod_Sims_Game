@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b5bthvorxrtse"]
+
+[ext_resource type="Script" uid="uid://dmt4ixolhjmbk" path="res://Collectable.gd" id="1_capov"]
+[ext_resource type="PackedScene" uid="uid://dyiha87euljtd" path="res://scripts/APPle.dae" id="1_xsbxq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_to0a4"]
+size = Vector3(1, 0.79248047, 1)
+
+[node name="Apple" type="Node3D" unique_id=847844160 groups=["Interactable"]]
+script = ExtResource("1_capov")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=604287604]
+
+[node name="APPle" parent="Area3D" unique_id=908810366 instance=ExtResource("1_xsbxq")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1089815041]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.20751953, 0)
+shape = SubResource("BoxShape3D_to0a4")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

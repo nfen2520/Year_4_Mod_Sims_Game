@@ -1,0 +1,195 @@
+[gd_scene format=3 uid="uid://d3w2x7krbb4k2"]
+
+[ext_resource type="Material" uid="uid://c4xxu2o7b6vq4" path="res://level/Platform.tres" id="1_otu7c"]
+[ext_resource type="Material" uid="uid://d18k5fipbaop" path="res://level/bridge.tres" id="2_3tfmr"]
+[ext_resource type="PackedScene" uid="uid://bm7avxi01pscx" path="res://Scenes/portal.tscn" id="3_xcy4m"]
+[ext_resource type="PackedScene" uid="uid://b5bthvorxrtse" path="res://plug_in.tscn" id="4_17fnr"]
+[ext_resource type="PackedScene" uid="uid://bl1846ulp4kkk" path="res://Scenes/portal_to_scene.tscn" id="5_cfodt"]
+[ext_resource type="Script" uid="uid://br6to3cwe0aq" path="res://player/player.gd" id="6_ov25d"]
+[ext_resource type="PackedScene" uid="uid://d34dyvc7kpft2" path="res://Scenes/Dialogue/dialogue_manager.tscn" id="7_47f8w"]
+[ext_resource type="PackedScene" uid="uid://8r0ojo4u8ogp" path="res://Scenes/pause_menu.tscn" id="8_p5vnv"]
+[ext_resource type="Texture2D" uid="uid://bgq853321pwek" path="res://player/reticle.png" id="10_854bi"]
+[ext_resource type="PackedScene" uid="uid://cao3lessf0hit" path="res://Scenes/save_load.tscn" id="11_3g87a"]
+
+[sub_resource type="Environment" id="Environment_kclpp"]
+background_mode = 1
+background_color = Color(0.042861514, 0.43082222, 0.5263812, 1)
+ambient_light_color = Color(0.72050786, 0.52943456, 0.57110924, 1)
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0, 0.4471709, 0.9957287, 1)
+fog_height = -2.0
+fog_height_density = 0.15
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_e8h4d"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kkp00"]
+
+[node name="Game" type="Node3D" unique_id=272787564]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1444011390]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.1512775, 1)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_otu7c")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=354744939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, -1.6512775, 1)
+use_collision = true
+size = Vector3(2, 1, 4)
+material = ExtResource("2_3tfmr")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=714301334]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, -1.6512775, 1)
+use_collision = true
+size = Vector3(2, 1, 4)
+material = ExtResource("2_3tfmr")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=925916209]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, -6.1512775, 1)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_otu7c")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1257180573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, -6.1512775, 1)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_otu7c")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=1627720476]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 1.5, -1.6512775, 7.5)
+use_collision = true
+size = Vector3(2, 1, 4)
+material = ExtResource("2_3tfmr")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=319442273]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 1.4999981, -1.6512775, 11.5)
+use_collision = true
+size = Vector3(2, 1, 4)
+material = ExtResource("2_3tfmr")
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=492763338]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 1.5, -6.1512775, 19.5)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_otu7c")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=5452037]
+transform = Transform3D(2.9802322e-08, 0, -1, 0, 1, 0, 1, 0, 2.9802322e-08, 1.5, -6.1512775, 29.5)
+use_collision = true
+size = Vector3(10, 10, 10)
+material = ExtResource("1_otu7c")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=733770912]
+transform = Transform3D(-4.371139e-08, 0.7071068, -0.7071068, 0, 0.7071068, 0.7071068, 1, 3.090862e-08, -3.090862e-08, -1, 3.1353254, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1691729940]
+environment = SubResource("Environment_kclpp")
+
+[node name="Portal" parent="." unique_id=811961017 instance=ExtResource("3_xcy4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.858634, -1.1512766, 34.316296)
+
+[node name="CollisionShape3D" parent="Portal" index="0" unique_id=1512046914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -18)
+
+[node name="MeshInstance3D" parent="Portal" index="1" unique_id=1618104056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9282494, 1, -17.715504)
+
+[node name="Marker3D" parent="Portal" index="2" unique_id=1908231004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.080471, 0, -36.110832)
+
+[node name="Apple" parent="." unique_id=847844160 instance=ExtResource("4_17fnr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 2)
+
+[node name="PortalToScene" parent="." unique_id=534343936 instance=ExtResource("5_cfodt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -1, 17)
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1793040131 node_paths=PackedStringArray("menu", "interact", "dia", "dot")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2947922, 0.5676441, 2.9992828)
+script = ExtResource("6_ov25d")
+menu = NodePath("pause_menu/CanvasLayer")
+interact = NodePath("CanvasLayer")
+dia = NodePath("Dialogue_Manager/Base")
+dot = NodePath("Reticle")
+lord = "game"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player" unique_id=1911625939]
+visible = false
+
+[node name="Label" type="Label" parent="Player/CanvasLayer" unique_id=415945445]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -131.0
+offset_right = 131.0
+offset_bottom = 51.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Press E to interact"
+
+[node name="Dialogue_Manager" parent="Player" unique_id=1306491053 node_paths=PackedStringArray("pause_menu") instance=ExtResource("7_47f8w")]
+pause_menu = NodePath("../pause_menu/CanvasLayer")
+
+[node name="Choices" parent="Player/Dialogue_Manager" index="1" unique_id=102763996]
+b_group = SubResource("ButtonGroup_e8h4d")
+
+[node name="Button" parent="Player/Dialogue_Manager/Choices/VBoxContainer" parent_id_path=PackedInt32Array(1306491053, 531771266) index="0" unique_id=780482240]
+button_group = SubResource("ButtonGroup_e8h4d")
+
+[node name="Button1" parent="Player/Dialogue_Manager/Choices/VBoxContainer" parent_id_path=PackedInt32Array(1306491053, 531771266) index="1" unique_id=1769366812]
+button_group = SubResource("ButtonGroup_e8h4d")
+
+[node name="Button2" parent="Player/Dialogue_Manager/Choices/VBoxContainer" parent_id_path=PackedInt32Array(1306491053, 531771266) index="2" unique_id=1486513052]
+button_group = SubResource("ButtonGroup_e8h4d")
+
+[node name="Button3" parent="Player/Dialogue_Manager/Choices/VBoxContainer" parent_id_path=PackedInt32Array(1306491053, 531771266) index="3" unique_id=202215075]
+button_group = SubResource("ButtonGroup_e8h4d")
+
+[node name="Button4" parent="Player/Dialogue_Manager/Choices/VBoxContainer" parent_id_path=PackedInt32Array(1306491053, 531771266) index="4" unique_id=1197582681]
+button_group = SubResource("ButtonGroup_e8h4d")
+
+[node name="pause_menu" parent="Player" unique_id=1934427437 node_paths=PackedStringArray("menu") instance=ExtResource("8_p5vnv")]
+unique_name_in_owner = true
+z_index = 19
+z_as_relative = false
+menu = NodePath("CanvasLayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=455975737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0063183, 0)
+shape = SubResource("CapsuleShape3D_kkp00")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=228370986]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5672088, 0)
+
+[node name="Reticle" type="TextureRect" parent="Player" unique_id=270389421]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_854bi")
+expand_mode = 1
+
+[node name="SaveLoad" parent="Player" unique_id=1586215929 instance=ExtResource("11_3g87a")]
+process_mode = 3
+
+[connection signal="save_pos" from="Player" to="Player/SaveLoad" method="_on_player_save_pos"]
+[connection signal="pause" from="Player/Dialogue_Manager" to="Player" method="_on_dialogue_manager_pause"]
+[connection signal="play" from="Player/Dialogue_Manager" to="Player" method="_on_dialogue_manager_play"]
+[connection signal="load" from="Player/pause_menu" to="Player/SaveLoad" method="_on_pause_menu_load"]
+[connection signal="pause" from="Player/pause_menu" to="Player" method="_on_pause_menu_pause"]
+[connection signal="play" from="Player/pause_menu" to="Player" method="_on_pause_menu_play"]
+[connection signal="save" from="Player/pause_menu" to="Player" method="_on_pause_menu_save"]
+
+[editable path="Portal"]
+[editable path="Player/Dialogue_Manager"]
+[editable path="Player/pause_menu"]

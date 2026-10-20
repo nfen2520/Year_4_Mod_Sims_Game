@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cree7r3fl7nkt"]
+
+[ext_resource type="Script" uid="uid://dmt4ixolhjmbk" path="res://Collectable.gd" id="1_jgi06"]
+[ext_resource type="PackedScene" uid="uid://c5b55no26obra" path="res://Connor_Stuff/A Simple Coin.dae" id="2_jgi06"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_to0a4"]
+size = Vector3(1, 0.79248047, 1)
+
+[node name="Coin" type="Area3D" unique_id=679075548 groups=["Collectable"]]
+script = ExtResource("1_jgi06")
+
+[node name="A Simple Coin" parent="." unique_id=1342136468 instance=ExtResource("2_jgi06")]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, -2.2491875, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1686300543]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.20751953, 0)
+shape = SubResource("BoxShape3D_to0a4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

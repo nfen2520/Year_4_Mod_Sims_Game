@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bvfpkendh4ai8"]
+
+[ext_resource type="PackedScene" uid="uid://crler5hr13bwm" path="res://player/simple_gun/gun_model.glb" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://br6to3cwe0aq" path="res://player/player.gd" id="1_rkbax"]
+[ext_resource type="Texture2D" uid="uid://bgq853321pwek" path="res://player/reticle.png" id="3_g1dw6"]
+[ext_resource type="PackedScene" uid="uid://b8jq8028iu1d3" path="res://player/bullet_3D.tscn" id="3_yw30f"]
+[ext_resource type="PackedScene" uid="uid://8r0ojo4u8ogp" path="res://Scenes/pause_menu.tscn" id="6_g6k8r"]
+[ext_resource type="PackedScene" uid="uid://d34dyvc7kpft2" path="res://Scenes/Dialogue/dialogue_manager.tscn" id="7_boad6"]
+[ext_resource type="PackedScene" uid="uid://cao3lessf0hit" path="res://Scenes/save_load.tscn" id="7_rgyib"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kclpp"]
+
+[node name="Player" type="CharacterBody3D" unique_id=1186603845 node_paths=PackedStringArray("menu", "dot")]
+script = ExtResource("1_rkbax")
+menu = NodePath("pause_menu")
+dot = NodePath("Reticle")
+
+[node name="Dialogue_Manager" parent="." unique_id=1306491053 node_paths=PackedStringArray("pause_menu") instance=ExtResource("7_boad6")]
+pause_menu = NodePath("../pause_menu/CanvasLayer")
+
+[node name="pause_menu" parent="." unique_id=1934427437 node_paths=PackedStringArray("menu") instance=ExtResource("6_g6k8r")]
+unique_name_in_owner = true
+process_mode = 1
+z_index = 10
+menu = NodePath("CanvasLayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=347794267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0063183, 0)
+shape = SubResource("CapsuleShape3D_kclpp")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=786723866]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5672088, 0)
+
+[node name="gun_model" parent="Camera3D" unique_id=1582109096 instance=ExtResource("1_oul6g")]
+unique_name_in_owner = true
+transform = Transform3D(-0.42797875, 0, -3.7415088e-08, 0, 0.42797875, 0, 3.7415088e-08, 0, -0.42797875, 0.5433784, -0.25509775, -0.6254715)
+
+[node name="Marker3D" type="Marker3D" parent="Camera3D" unique_id=1222540640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54744667, -0.24160099, -0.9692753)
+
+[node name="Bullet3D" parent="Camera3D/Marker3D" unique_id=1499107883 instance=ExtResource("3_yw30f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54744667, 1.3256078, -0.9692753)
+top_level = true
+
+[node name="Reticle" type="TextureRect" parent="." unique_id=1892826390]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_g1dw6")
+expand_mode = 1
+
+[node name="SaveLoad" parent="." unique_id=1586215929 instance=ExtResource("7_rgyib")]
+
+[connection signal="save_pos" from="." to="SaveLoad" method="_on_player_save_pos"]
+[connection signal="pause" from="Dialogue_Manager" to="." method="_on_dialogue_manager_pause"]
+[connection signal="play" from="Dialogue_Manager" to="." method="_on_dialogue_manager_play"]
+[connection signal="load" from="pause_menu" to="SaveLoad" method="_on_pause_menu_load"]
+[connection signal="pause" from="pause_menu" to="." method="_on_pause_menu_pause"]
+[connection signal="play" from="pause_menu" to="." method="_on_pause_menu_play"]
+[connection signal="save" from="pause_menu" to="." method="_on_pause_menu_save"]
+[connection signal="save" from="pause_menu" to="SaveLoad" method="_on_pause_menu_save"]
+
+[editable path="pause_menu"]

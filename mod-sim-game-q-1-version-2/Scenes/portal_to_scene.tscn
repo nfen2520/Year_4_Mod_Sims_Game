@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bl1846ulp4kkk"]
+
+[ext_resource type="Script" uid="uid://fxck8ygo5a8w" path="res://scripts/portal_to_scene.gd" id="1_qonv2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o2cj4"]
+
+[sub_resource type="GDScript" id="GDScript_qonv2"]
+script/source = "extends CollisionShape3D
+"
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_27g7l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kclpp"]
+albedo_color = Color(0.32243413, 1, 0.33139193, 1)
+
+[node name="PortalToScene" type="Area3D" unique_id=534343936]
+script = ExtResource("1_qonv2")
+scene = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=909434015]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_o2cj4")
+script = SubResource("GDScript_qonv2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=502147913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_27g7l")
+surface_material_override/0 = SubResource("StandardMaterial3D_kclpp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

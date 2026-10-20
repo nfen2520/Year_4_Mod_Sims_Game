@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bm7avxi01pscx"]
+
+[ext_resource type="Script" uid="uid://b5cbs0dy4lhmf" path="res://Scenes/portal.gd" id="1_j20fm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kclpp"]
+
+[sub_resource type="GDScript" id="GDScript_oi2tk"]
+script/source = "extends CollisionShape3D
+"
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kclpp"]
+
+[node name="Portal" type="Area3D" unique_id=811961017]
+script = ExtResource("1_j20fm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1512046914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_kclpp")
+script = SubResource("GDScript_oi2tk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1618104056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_kclpp")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1908231004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7331667)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

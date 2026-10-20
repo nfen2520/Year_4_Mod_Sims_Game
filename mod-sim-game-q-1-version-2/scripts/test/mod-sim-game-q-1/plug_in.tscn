@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b5bthvorxrtse"]
+
+[ext_resource type="PackedScene" uid="uid://dyiha87euljtd" path="res://scripts/APPle.dae" id="1_xsbxq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_kclpp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_to0a4"]
+
+[node name="Apple" type="Node3D" unique_id=847844160]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1203629737]
+transform = Transform3D(0.72499996, 0, 0, 0, 0.72499996, 0, 0, 0, 0.72499996, 0, 0, 0)
+physics_material_override = SubResource("PhysicsMaterial_kclpp")
+
+[node name="APPle" parent="StaticBody3D" unique_id=908810366 instance=ExtResource("1_xsbxq")]
+transform = Transform3D(13.793104, 0, 0, 0, 13.793104, 0, 0, 0, 13.793104, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1089815041]
+shape = SubResource("BoxShape3D_to0a4")

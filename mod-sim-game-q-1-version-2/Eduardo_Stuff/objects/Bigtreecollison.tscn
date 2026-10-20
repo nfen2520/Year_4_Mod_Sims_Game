@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://3qg650ctfipn"]
+
+[ext_resource type="ArrayMesh" uid="uid://clgv54i6qr8yo" path="res://Big tree 2.obj" id="1_jeh0t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hikir"]
+albedo_color = Color(0.37909704, 0.23088235, 0.10138204, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kv1gp"]
+height = 0.43945313
+
+[node name="Node3D" type="Node3D" unique_id=940958020]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1465329678]
+
+[node name="CollisionPolygon3D8" type="CollisionPolygon3D" parent="StaticBody3D" unique_id=2106596123]
+transform = Transform3D(-0.39073104, -0.0834277, 0.9167164, -8.706297e-08, -0.9958844, -0.09063257, 0.9205048, -0.035413045, 0.38912296, 27.147484, 31.467262, 5.7660866)
+polygon = PackedVector2Array(37.783787, -135.60327, 40.57272, -135.69131, 44.714813, -8.452209, 32.893234, -8.488815)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1152890362]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 229.56519, 0, -134.50143)
+mesh = ExtResource("1_jeh0t")
+surface_material_override/0 = SubResource("StandardMaterial3D_hikir")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="StaticBody3D" unique_id=1986003865]
+transform = Transform3D(0.9238795, 0.03468351, -0.38110852, -8.706298e-08, -0.9958844, -0.09063258, -0.3826835, 0.08373361, -0.9200772, -5.125252, 31.559925, 76.01501)
+polygon = PackedVector2Array(38.76136, -135.60258, 41.197243, -135.67278, 46.4461, -7.43886, 32.893234, -8.488815)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="StaticBody3D" unique_id=1701255177]
+transform = Transform3D(0.9186423, -0.03448706, -0.37894812, -8.656944e-08, -0.99023896, 0.0901188, -0.38051414, -0.08325888, -0.9148615, -16.295467, 30.213314, 47.324753)
+polygon = PackedVector2Array(38.182003, -137.70331, 42.03869, -135.29749, 46.193024, -7.25828, 32.893234, -8.488815)
+
+[node name="CollisionPolygon3D3" type="CollisionPolygon3D" parent="StaticBody3D" unique_id=722918242]
+transform = Transform3D(0.3746066, 0.084033035, 0.923368, -8.706298e-08, -0.9958844, 0.09063258, 0.92718387, -0.033951644, -0.37306488, 25.339725, 31.559925, 4.7722654)
+polygon = PackedVector2Array(37.943253, -135.77649, 40.62024, -135.87773, 46.193024, -7.25828, 32.893234, -8.488815)
+
+[node name="CollisionPolygon3D4" type="CollisionPolygon3D" parent="StaticBody3D" unique_id=1483991804]
+transform = Transform3D(0.3746066, -0.084033035, 0.923368, 8.706298e-08, -0.9958844, -0.09063258, 0.92718387, 0.033951644, -0.37306488, -3.2413025, 31.467258, 15.659481)
+polygon = PackedVector2Array(38.645805, -135.49016, 41.587105, -136.06729, 46.193024, -7.25828, 32.893234, -8.488815)
+
+[node name="CollisionPolygon3D5" type="CollisionPolygon3D" parent="StaticBody3D" unique_id=736779466]
+transform = Transform3D(0.92050487, -0.035412893, 0.38912308, 8.706298e-08, -0.9958844, -0.09063258, 0.39073116, 0.08342777, -0.91671646, -16.123474, 31.467262, 45.712025)
+polygon = PackedVector2Array(38.157272, -135.39061, 40.57272, -135.69131, 44.714813, -8.452209, 32.893234, -8.488815)
+
+[node name="CollisionPolygon3D6" type="CollisionPolygon3D" parent="StaticBody3D" unique_id=910499733]
+transform = Transform3D(0.39073122, 0.08342769, -0.9167164, -8.706298e-08, -0.9958844, -0.09063258, -0.9205048, 0.03541306, -0.38912314, 24.826164, 31.467262, 88.79214)
+polygon = PackedVector2Array(37.783787, -135.60327, 40.57272, -135.69131, 44.714813, -8.452209, 32.893234, -8.488815)
+
+[node name="CollisionPolygon3D7" type="CollisionPolygon3D" parent="StaticBody3D" unique_id=1883386523]
+transform = Transform3D(-0.92050487, 0.03541289, -0.38912305, 8.706298e-08, -0.9958844, -0.09063258, -0.39073113, -0.08342777, 0.91671646, 68.561264, 31.467262, 48.104645)
+polygon = PackedVector2Array(37.783787, -135.60327, 40.57272, -135.69131, 44.714813, -8.452209, 32.893234, -8.488815)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" unique_id=1951982420]
+transform = Transform3D(8.556952, 0, 0, 0, 8.556952, 0, 0, 0, 8.556952, 25.699009, 164.76988, 46.90818)
+shape = SubResource("CylinderShape3D_kv1gp")

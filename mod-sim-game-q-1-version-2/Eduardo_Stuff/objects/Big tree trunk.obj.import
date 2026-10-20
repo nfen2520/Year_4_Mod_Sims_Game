@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b8kg0k1qd50pv"
+path="res://.godot/imported/Big tree trunk.obj-85853e43a3d24d2fb0959816f291d66e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Big tree trunk.obj-85853e43a3d24d2fb0959816f291d66e.mesh"]
+
+source_file="res://Eduardo_Stuff/objects/Big tree trunk.obj"
+dest_files=["res://.godot/imported/Big tree trunk.obj-85853e43a3d24d2fb0959816f291d66e.mesh", "res://.godot/imported/Big tree trunk.obj-85853e43a3d24d2fb0959816f291d66e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

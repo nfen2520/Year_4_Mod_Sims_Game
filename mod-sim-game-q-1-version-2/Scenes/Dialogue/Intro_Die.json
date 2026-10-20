@@ -1,0 +1,40 @@
+{
+	"start" : {
+		"text": "whats up guys",
+		"name" : "Little dude",
+		"sprite": "guy",
+		"next": "A"
+	},
+	
+	"A" : {
+		"text": "How you",
+		"name" : "big dude",
+		"sprite": "godot",
+		"next": "B"
+	},
+	
+	"B" : {
+		"text": "Who you",
+		"name" : "big dude",
+		"sprite": "godot",
+		"choices": {
+			"Blue" : "B+",
+			"Orange" : "B-",
+			"Red" : "B-"
+		}
+	},
+	"B+" : {
+		"text": "good",
+		"name" : "big dude",
+		"sprite": "guy",
+		"close": "no",
+		
+		},
+	"B-" : {
+		"text": "Bad",
+		"name" : "big dude",
+		"sprite": "sad",
+		"close": "no",
+		
+		}
+	}

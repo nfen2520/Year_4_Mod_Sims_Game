@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://q2bhx334ymou"]
+
+[ext_resource type="Script" uid="uid://b6lqxxt4qysst" path="res://Worlds/world_root.gd" id="1_bl5wk"]
+[ext_resource type="PackedScene" uid="uid://bvol2kte0bjsr" path="res://Worlds/tower.tscn" id="2_ep35i"]
+[ext_resource type="PackedScene" uid="uid://iggyo35vq0r4" path="res://Worlds/Forest.tscn" id="3_ep35i"]
+[ext_resource type="PackedScene" uid="uid://cao3lessf0hit" path="res://Scenes/save_load.tscn" id="3_fqa7w"]
+[ext_resource type="PackedScene" uid="uid://cxdywhmbeb3ey" path="res://Worlds/Beach Scene.tscn" id="4_rvig7"]
+[ext_resource type="PackedScene" uid="uid://bvfpkendh4ai8" path="res://player/player.tscn" id="6_2rrfa"]
+
+[node name="World_Root" type="Node3D" unique_id=942558004]
+script = ExtResource("1_bl5wk")
+world0 = ExtResource("2_ep35i")
+world1 = ExtResource("3_ep35i")
+world2 = ExtResource("4_rvig7")
+player_scene = ExtResource("6_2rrfa")
+
+[node name="SaveLoad" parent="." unique_id=1586215929 instance=ExtResource("3_fqa7w")]

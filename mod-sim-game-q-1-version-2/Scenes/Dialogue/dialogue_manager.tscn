@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://d34dyvc7kpft2"]
+
+[ext_resource type="Script" uid="uid://yrgbtpoc7fro" path="res://Dialogue_manager.gd" id="1_8hck1"]
+[ext_resource type="Texture2D" uid="uid://bq7w3x3m1rbgv" path="res://icon.svg" id="2_2hxt5"]
+[ext_resource type="Script" uid="uid://c3nf02prkxhx4" path="res://Scenes/Dialogue/choices.gd" id="3_2hxt5"]
+[ext_resource type="Script" uid="uid://o10b2q6u8icy" path="res://Scenes/Dialogue/DialogueChar.gd" id="3_5ymx3"]
+[ext_resource type="ButtonGroup" uid="uid://srnlqrh34mkb" path="res://DBG.tres" id="4_hqmlr"]
+[ext_resource type="Texture2D" uid="uid://ccr2rrteikbs2" path="res://scripts/The_goat.png" id="4_n30kk"]
+[ext_resource type="Texture2D" uid="uid://cdwe7nsu6oan" path="res://scripts/Sad_Suse.png" id="5_s3a3v"]
+
+[node name="Dialogue_Manager" type="Control" unique_id=1306491053 node_paths=PackedStringArray("dialogue", "char_text", "char_name", "char_sprite", "BaseLayer", "ChoiceLayer")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8hck1")
+jsonsrc = "res://Scenes/Dialogue/Intro_Die.json"
+dialogue = NodePath("Base")
+char_text = NodePath("Base/Background/Text")
+char_name = NodePath("Base/Background/Name")
+char_sprite = NodePath("Base/Background/Person")
+BaseLayer = NodePath("Base")
+ChoiceLayer = NodePath("Choices")
+
+[node name="Base" type="CanvasLayer" parent="." unique_id=653821454]
+visible = false
+
+[node name="Background" type="ColorRect" parent="Base" unique_id=187196758]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -227.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Person" type="TextureRect" parent="Base/Background" unique_id=105987128]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 25.0
+offset_top = -88.5
+offset_right = 188.0
+offset_bottom = 39.5
+grow_vertical = 2
+texture = ExtResource("2_2hxt5")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("3_5ymx3")
+guy = ExtResource("4_n30kk")
+godot = ExtResource("2_2hxt5")
+sad = ExtResource("5_s3a3v")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Base/Background/Person" unique_id=1342627144]
+
+[node name="Text" type="Label" parent="Base/Background" unique_id=1239070656]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.0
+offset_top = -96.83438
+offset_right = 551.4934
+offset_bottom = 96.83438
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9999707, 0.908768)
+theme_override_font_sizes/font_size = 25
+
+[node name="Name" type="Label" parent="Base/Background" unique_id=1500205024]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -74.0
+offset_right = 217.0
+offset_bottom = -24.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Hello"
+
+[node name="Choices" type="CanvasLayer" parent="." unique_id=102763996]
+visible = false
+script = ExtResource("3_2hxt5")
+b_group = ExtResource("4_hqmlr")
+
+[node name="ColorRect" type="ColorRect" parent="Choices" unique_id=520260499]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.20392157)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Choices" unique_id=531771266]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = -139.0
+offset_right = 131.5
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="Button" type="Button" parent="Choices/VBoxContainer" unique_id=780482240]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+toggle_mode = true
+button_group = ExtResource("4_hqmlr")
+
+[node name="Button1" type="Button" parent="Choices/VBoxContainer" unique_id=1769366812]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+toggle_mode = true
+button_group = ExtResource("4_hqmlr")
+
+[node name="Button2" type="Button" parent="Choices/VBoxContainer" unique_id=1486513052]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+toggle_mode = true
+button_group = ExtResource("4_hqmlr")
+
+[node name="Button3" type="Button" parent="Choices/VBoxContainer" unique_id=202215075]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+toggle_mode = true
+button_group = ExtResource("4_hqmlr")
+
+[node name="Button4" type="Button" parent="Choices/VBoxContainer" unique_id=1197582681]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+toggle_mode = true
+button_group = ExtResource("4_hqmlr")
+
+[connection signal="next_id" from="Choices" to="." method="_on_choices_next_id"]
