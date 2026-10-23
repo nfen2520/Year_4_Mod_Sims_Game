@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://crxp7i5pkn4k8"]
+
+[ext_resource type="Texture2D" uid="uid://bq7w3x3m1rbgv" path="res://icon.svg" id="1_bbsb6"]
+
+[sub_resource type="Animation" id="Animation_phn2e"]
+resource_name = "Cursor"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(2, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_aw5hp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aaiuy"]
+_data = {
+&"Cursor": SubResource("Animation_phn2e"),
+&"RESET": SubResource("Animation_aw5hp")
+}
+
+[node name="UI_Test" type="Sprite2D" unique_id=1531128443]
+texture = ExtResource("1_bbsb6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1388903730]
+libraries/ = SubResource("AnimationLibrary_aaiuy")
+autoplay = &"Cursor"

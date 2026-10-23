@@ -5,6 +5,7 @@ extends Node3D
 @export var world2 : PackedScene
 @export var player_scene : PackedScene
 var current : Node3D = null
+var current_world : int = 0
 var dict : Dictionary = {}
 var right : int = 0
 var player 
@@ -15,10 +16,13 @@ func _ready():
 func change_scene(world):
 	if world == 0:
 		load_scene(world0)
+		current_world = 0
 	elif world == 1:
 		load_scene(world1)
+		current_world = 1
 	elif world == 2:
 		load_scene(world2)
+		current_world = 2
 
 func load_scene(arg: PackedScene):
 	var new_world = arg.instantiate()
@@ -48,10 +52,12 @@ func score(arg):
 	dict["score"] = value
 
 func save():
+	dict["world"] = current_world
 	return dict
 	
 func set_save(arg):
 	dict = arg
+	change_scene(dict["world"])
 
 func start_game():
 	player = player_scene.instantiate()

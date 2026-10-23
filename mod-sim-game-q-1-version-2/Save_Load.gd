@@ -13,7 +13,6 @@ func _load():
 	file2.close()
 	var file = FileAccess.open("user://savegame.dat", FileAccess.READ)
 	var saved_data = file.get_var()
-	WorldRoot.change_scene(saved_data["scene"])
 	EventBus.player_move.emit(saved_data)
 	file.close()
 
@@ -22,10 +21,7 @@ func _load():
 func _save_data(dict) -> void:
 	var file = FileAccess.open("user://savegame.dat", FileAccess.WRITE)
 	file.store_var(dict)
-	print("hola")
 	file.close()
 	var file2 = FileAccess.open("user://save_world.dat", FileAccess.WRITE)
 	file2.store_var(WorldRoot.save())
-	print("hi")
-	print(str(WorldRoot.save()))
 	file2.close()

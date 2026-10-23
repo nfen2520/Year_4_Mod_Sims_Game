@@ -12,7 +12,7 @@ enum World{
 @export var interact: CanvasLayer
 @export var shoot : Marker3D
 var player = self
-@export var dot: TextureRect
+@export var dot: CanvasLayer
 @onready var camera = %Camera3D
 @export var bar : Label
 signal dialogue_start(file: String)
