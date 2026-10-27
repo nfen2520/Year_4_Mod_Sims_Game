@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="push" format=3 uid="uid://dvwioyrsrfusd"]
+
+[ext_resource type="Resource" uid="uid://c17kmcch7my6w" path="res://scripts/Resources/Test_Thing_1.tres" id="1_2dai8"]
+[ext_resource type="Script" uid="uid://rvs3me5ps17x" path="res://scripts/Resources/Outcome_Test_1.gd" id="1_7biyh"]
+
+[resource]
+script = ExtResource("1_7biyh")
+give = ExtResource("1_2dai8")
+metadata/_custom_type_script = "uid://rvs3me5ps17x"

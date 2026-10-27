@@ -9,6 +9,7 @@ var current_world : int = 0
 var dict : Dictionary = {}
 var right : int = 0
 var player 
+var cond : Array = []
 func _ready():
 	EventBus.save_scene.connect(store)
 	EventBus.picked_up.connect(score)
@@ -64,3 +65,18 @@ func start_game():
 	add_child(player)
 	change_scene(0)
 	pass
+
+func check_event(condition : Conditional):
+	if condition in cond:
+		return true
+	else:
+		return false
+		
+		
+func push_event(condition : Conditional):
+	if condition in cond:
+		pass
+	else:
+		cond.append(condition)
+	dict["Conditions"] = cond
+	print(str(cond))

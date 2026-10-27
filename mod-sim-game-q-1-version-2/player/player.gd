@@ -118,7 +118,8 @@ func _on_player_reach_body_entered(body):
 			interact.show()
 	if body.is_in_group("Collectable"):
 		print("hola")
-
+	if body is Placeholder:
+		body.collect()
 func _on_player_reach_body_exited(body: Node3D) -> void:
 	if body.is_in_group("Interactable"):
 		path = null

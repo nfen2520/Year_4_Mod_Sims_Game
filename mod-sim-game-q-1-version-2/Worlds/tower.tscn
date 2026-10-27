@@ -5,6 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://6vt2jr10vwk6" path="res://Worlds/new_tree.tscn" id="4_cejfp"]
 [ext_resource type="PackedScene" uid="uid://763rg2qvj1tg" path="res://apple.tscn" id="4_x43jg"]
 [ext_resource type="PackedScene" uid="uid://bl1846ulp4kkk" path="res://Scenes/portal_to_scene.tscn" id="5_x43jg"]
+[ext_resource type="PackedScene" uid="uid://beku7rxll4enx" path="res://scripts/Resources/test_event.tscn" id="6_j10ut"]
+[ext_resource type="Script" uid="uid://c86184mxqtgja" path="res://scripts/Resources/Event_Test.gd" id="7_wrukm"]
+[ext_resource type="Resource" uid="uid://cqf8h7qo166l4" path="res://scripts/Resources/Test_1.tres" id="8_fu0ub"]
+[ext_resource type="Resource" uid="uid://c17kmcch7my6w" path="res://scripts/Resources/Test_Thing_1.tres" id="9_e1vb3"]
+[ext_resource type="Script" uid="uid://u050qwvys5ys" path="res://scripts/Resources/Conditional.gd" id="10_jehlo"]
+[ext_resource type="Script" uid="uid://rvs3me5ps17x" path="res://scripts/Resources/Outcome_Test_1.gd" id="11_dwxf5"]
+[ext_resource type="Script" uid="uid://b4mnktbvbsywn" path="res://scripts/Resources/Conditions.gd" id="11_uf183"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cejfp"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,6 +24,15 @@ sky_material = SubResource("ProceduralSkyMaterial_cejfp")
 background_mode = 2
 sky = SubResource("Sky_x43jg")
 glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_jehlo"]
+script = ExtResource("11_dwxf5")
+metadata/_custom_type_script = "uid://rvs3me5ps17x"
+
+[sub_resource type="Resource" id="Resource_e1vb3"]
+script = ExtResource("11_uf183")
+outcome = SubResource("Resource_jehlo")
+metadata/_custom_type_script = "uid://b4mnktbvbsywn"
 
 [node name="Tower" type="Node3D" unique_id=857543120 node_paths=PackedStringArray("spawn")]
 script = ExtResource("1_j10ut")
@@ -54,3 +70,15 @@ scene = 2
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=899716175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.153597, 0, 0)
+
+[node name="Test_Event" parent="." unique_id=247238755 instance=ExtResource("6_j10ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.405962, 0.8487234, -8.893776)
+script = ExtResource("7_wrukm")
+Condition_Resource = ExtResource("8_fu0ub")
+give = ExtResource("9_e1vb3")
+
+[node name="Test_Event2" parent="." unique_id=261233530 instance=ExtResource("6_j10ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.894373, 0.8487234, 10.762308)
+script = ExtResource("7_wrukm")
+Condition_Resource = SubResource("Resource_e1vb3")
+give = ExtResource("9_e1vb3")
