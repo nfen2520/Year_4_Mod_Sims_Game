@@ -1,6 +1,10 @@
 extends Outcome
-class_name Hi
+class_name Teleport
+
+@export var location : WorldSelect
 
 func action():
 	print("hi guys")
+	pass
+func stop():
 	pass

@@ -111,17 +111,16 @@ func _on_dialogue_manager_play() -> void:
 
 
 func _on_player_reach_body_entered(body):
-	if body.is_in_group("Interactable"):
-		if body.has_method("hi"):
-			path = body.hi()
-			dialogue = true
-			interact.show()
+	if body is Dialogue:
+		path = body.collect()
+		dialogue = true
+		interact.show()
 	if body.is_in_group("Collectable"):
 		print("hola")
 	if body is Placeholder:
 		body.collect()
-func _on_player_reach_body_exited(body: Node3D) -> void:
-	if body.is_in_group("Interactable"):
+func _on_player_reach_body_exited(body):
+	if body is Dialogue:
 		path = null
 		dialogue = false
 		interact.hide()

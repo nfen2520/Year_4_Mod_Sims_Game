@@ -6,3 +6,6 @@ class_name push
 func action():
 	WorldRoot.push_event(give)
 	pass
+
+func stop():
+	pass

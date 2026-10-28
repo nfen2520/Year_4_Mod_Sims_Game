@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cm3xy0ed4vogi"
-path="res://.godot/imported/Crab WIreframe.obj-07e389f6b5eaad8df2b130e148229939.mesh"
+path="res://.godot/imported/Crab WIreframe.obj-4b90557abb1b007476fbae0a924a9e5e.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Crab WIreframe.obj-07e389f6b5eaad8df2b130e148229939.mesh"]
+files=["res://.godot/imported/Crab WIreframe.obj-4b90557abb1b007476fbae0a924a9e5e.mesh"]
 
-source_file="res://Crab WIreframe.obj"
-dest_files=["res://.godot/imported/Crab WIreframe.obj-07e389f6b5eaad8df2b130e148229939.mesh", "res://.godot/imported/Crab WIreframe.obj-07e389f6b5eaad8df2b130e148229939.mesh"]
+source_file="res://the_city/Crab WIreframe.obj"
+dest_files=["res://.godot/imported/Crab WIreframe.obj-4b90557abb1b007476fbae0a924a9e5e.mesh", "res://.godot/imported/Crab WIreframe.obj-4b90557abb1b007476fbae0a924a9e5e.mesh"]
 
 [params]
 

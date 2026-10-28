@@ -4,3 +4,6 @@ class_name Outcome
 
 @abstract
 func action()
+
+@abstract
+func stop()

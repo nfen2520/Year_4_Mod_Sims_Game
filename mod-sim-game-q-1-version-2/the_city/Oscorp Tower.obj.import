@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dyguvpiarqeqs"
-path="res://.godot/imported/Oscorp Tower.obj-beebd302a2271e6e78ce1f6ab6bdb086.mesh"
+path="res://.godot/imported/Oscorp Tower.obj-d061fc428b21bebfd3a0c60d7e49d890.mesh"
 
 [deps]
 
-files=["res://.godot/imported/Oscorp Tower.obj-beebd302a2271e6e78ce1f6ab6bdb086.mesh"]
+files=["res://.godot/imported/Oscorp Tower.obj-d061fc428b21bebfd3a0c60d7e49d890.mesh"]
 
-source_file="res://Oscorp Tower.obj"
-dest_files=["res://.godot/imported/Oscorp Tower.obj-beebd302a2271e6e78ce1f6ab6bdb086.mesh", "res://.godot/imported/Oscorp Tower.obj-beebd302a2271e6e78ce1f6ab6bdb086.mesh"]
+source_file="res://the_city/Oscorp Tower.obj"
+dest_files=["res://.godot/imported/Oscorp Tower.obj-d061fc428b21bebfd3a0c60d7e49d890.mesh", "res://.godot/imported/Oscorp Tower.obj-d061fc428b21bebfd3a0c60d7e49d890.mesh"]
 
 [params]
 

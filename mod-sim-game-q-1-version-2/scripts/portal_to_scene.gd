@@ -8,7 +8,7 @@ enum World{
 	World_4 = 4,
 	}
 
-@export var scene : World
+@export var scene : WorldSelect
 
 func _on_body_entered(body):
 	if body.is_in_group("Player"):

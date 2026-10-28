@@ -14,7 +14,7 @@ albedo_color = Color(0.4842164, 0.2059276, 0.07142133, 1)
 height = 23.752686
 radius = 1.9790039
 
-[node name="newTree" type="StaticBody3D" unique_id=397061814 groups=["Interactable"]]
+[node name="newTree" type="StaticBody3D" unique_id=397061814]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_ligs6")
 jsonsrc = "res://Scenes/Dialogue/Intro_Die.json"

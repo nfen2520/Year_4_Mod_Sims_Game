@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://ons6n4ussvbu"
-path="res://.godot/imported/City plan.obj-199d17584b109a4fcd0a853db2f09951.mesh"
+path="res://.godot/imported/City plan.obj-878a2170d91590267650654b9e25ff79.mesh"
 
 [deps]
 
-files=["res://.godot/imported/City plan.obj-199d17584b109a4fcd0a853db2f09951.mesh"]
+files=["res://.godot/imported/City plan.obj-878a2170d91590267650654b9e25ff79.mesh"]
 
-source_file="res://City plan.obj"
-dest_files=["res://.godot/imported/City plan.obj-199d17584b109a4fcd0a853db2f09951.mesh", "res://.godot/imported/City plan.obj-199d17584b109a4fcd0a853db2f09951.mesh"]
+source_file="res://the_city/City plan.obj"
+dest_files=["res://.godot/imported/City plan.obj-878a2170d91590267650654b9e25ff79.mesh", "res://.godot/imported/City plan.obj-878a2170d91590267650654b9e25ff79.mesh"]
 
 [params]
 
