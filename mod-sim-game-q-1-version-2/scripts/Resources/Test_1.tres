@@ -3,15 +3,20 @@
 [ext_resource type="Script" uid="uid://u050qwvys5ys" path="res://scripts/Resources/Conditional.gd" id="1_8fksa"]
 [ext_resource type="Script" uid="uid://b4mnktbvbsywn" path="res://scripts/Resources/Conditions.gd" id="1_sk3bl"]
 [ext_resource type="Resource" uid="uid://c17kmcch7my6w" path="res://scripts/Resources/Test_Thing_1.tres" id="2_dr4d3"]
-[ext_resource type="Script" uid="uid://rvs3me5ps17x" path="res://scripts/Resources/Outcome_Test_1.gd" id="3_v3h04"]
+[ext_resource type="Script" uid="uid://c8rja1civjbhk" path="res://scripts/Resources/World_Select.gd" id="3_v3h04"]
+[ext_resource type="Script" uid="uid://byc2o40s28y72" path="res://scripts/Resources/Outcome_Test_2.gd" id="4_11s56"]
 
-[sub_resource type="Resource" id="Resource_2rrfa"]
+[sub_resource type="Resource" id="Resource_4c3fi"]
 script = ExtResource("3_v3h04")
-give = ExtResource("2_dr4d3")
-metadata/_custom_type_script = "uid://rvs3me5ps17x"
+metadata/_custom_type_script = "uid://c8rja1civjbhk"
+
+[sub_resource type="Resource" id="Resource_kqnsd"]
+script = ExtResource("4_11s56")
+location = SubResource("Resource_4c3fi")
+metadata/_custom_type_script = "uid://byc2o40s28y72"
 
 [resource]
 script = ExtResource("1_sk3bl")
 condition = Array[ExtResource("1_8fksa")]([ExtResource("2_dr4d3")])
-outcome = SubResource("Resource_2rrfa")
+outcome = SubResource("Resource_kqnsd")
 metadata/_custom_type_script = "uid://b4mnktbvbsywn"

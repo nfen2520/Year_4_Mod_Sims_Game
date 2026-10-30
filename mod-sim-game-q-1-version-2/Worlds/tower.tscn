@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://c86184mxqtgja" path="res://scripts/Resources/Event_Test.gd" id="7_wrukm"]
 [ext_resource type="Resource" uid="uid://cqf8h7qo166l4" path="res://scripts/Resources/Test_1.tres" id="8_fu0ub"]
 [ext_resource type="Resource" uid="uid://c17kmcch7my6w" path="res://scripts/Resources/Test_Thing_1.tres" id="9_e1vb3"]
+[ext_resource type="Script" uid="uid://c8rja1civjbhk" path="res://scripts/Resources/World_Select.gd" id="10_flexi"]
 [ext_resource type="Script" uid="uid://u050qwvys5ys" path="res://scripts/Resources/Conditional.gd" id="10_jehlo"]
 [ext_resource type="Script" uid="uid://rvs3me5ps17x" path="res://scripts/Resources/Outcome_Test_1.gd" id="11_dwxf5"]
 [ext_resource type="Script" uid="uid://b4mnktbvbsywn" path="res://scripts/Resources/Conditions.gd" id="11_uf183"]
@@ -36,6 +37,16 @@ metadata/_custom_type_script = "uid://bqy73c6njpvq3"
 script = ExtResource("11_uf183")
 outcome = SubResource("Resource_km1lx")
 metadata/_custom_type_script = "uid://b4mnktbvbsywn"
+
+[sub_resource type="Resource" id="Resource_dr4d3"]
+script = ExtResource("10_flexi")
+scene = 1
+metadata/_custom_type_script = "uid://c8rja1civjbhk"
+
+[sub_resource type="Resource" id="Resource_v3h04"]
+script = ExtResource("10_flexi")
+scene = 2
+metadata/_custom_type_script = "uid://c8rja1civjbhk"
 
 [sub_resource type="Resource" id="Resource_jehlo"]
 script = ExtResource("11_dwxf5")
@@ -68,7 +79,7 @@ material = ExtResource("1_7ik0a")
 transform = Transform3D(0.999852, -0.0055982242, 0.016267037, 0.0048060096, 0.9988195, 0.04833896, -0.016518442, -0.04825363, 0.99869853, 7.5369787, 0.26211214, 7.523609)
 
 [node name="Apple2" parent="." unique_id=1872325421 groups=["Collectable"] instance=ExtResource("4_x43jg")]
-transform = Transform3D(4.0144057, -0.02247693, 0.06531214, 0.019296128, 4.0102596, 0.19408092, -0.066321544, -0.19373831, 4.0097747, -9.041635, 1.4694498, 7.523609)
+transform = Transform3D(4.014449, -0.0210198, 0.063064866, 0.021022392, 4.0149446, 0, -0.063064, 0.0003302054, 4.0145035, -9.041635, 1.2215612, 7.523609)
 value = 6
 
 [node name="newTree" parent="." unique_id=397061814 instance=ExtResource("4_cejfp")]
@@ -78,10 +89,11 @@ Condition_Resource = SubResource("Resource_kclpp")
 
 [node name="PortalToScene" parent="." unique_id=534343936 instance=ExtResource("5_x43jg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3194895, 0, 0)
+scene = SubResource("Resource_dr4d3")
 
 [node name="PortalToScene2" parent="." unique_id=92662499 instance=ExtResource("5_x43jg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.000812, -0.15127754, -8.77194)
-scene = 2
+scene = SubResource("Resource_v3h04")
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=899716175]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.153597, 0, 0)
