@@ -133,3 +133,9 @@ func _play():
 	dot.visible = true
 	bar.visible = true
 	get_tree().paused = false
+
+
+func _on_area_3d_body_entered(body):
+	if body is Mover:
+		print("im stupid")
+		body.collect()

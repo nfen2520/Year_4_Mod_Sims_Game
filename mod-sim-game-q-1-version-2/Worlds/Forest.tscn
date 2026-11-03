@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://dee15nsw562m7" path="res://Worlds/World_proccess.gd" id="1_3xaso"]
 [ext_resource type="PackedScene" uid="uid://bl1846ulp4kkk" path="res://Scenes/portal_to_scene.tscn" id="2_ajwj3"]
 [ext_resource type="PackedScene" uid="uid://cree7r3fl7nkt" path="res://Scenes/coin.tscn" id="3_decdj"]
+[ext_resource type="Script" uid="uid://u050qwvys5ys" path="res://scripts/Resources/Conditional.gd" id="3_dq367"]
+[ext_resource type="Script" uid="uid://byc2o40s28y72" path="res://scripts/Resources/Outcome_Test_2.gd" id="4_ldt5t"]
+[ext_resource type="Resource" uid="uid://b5mw5uh7ejtvm" path="res://scripts/Resources/Resource_saves/World_0.tres" id="5_ujaao"]
+[ext_resource type="Script" uid="uid://b4mnktbvbsywn" path="res://scripts/Resources/Conditions.gd" id="6_0ee7v"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ajwj3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -15,6 +19,16 @@ sky_material = SubResource("ProceduralSkyMaterial_ajwj3")
 background_mode = 2
 sky = SubResource("Sky_o4o7s")
 glow_enabled = true
+
+[sub_resource type="Resource" id="Resource_ud7qa"]
+script = ExtResource("4_ldt5t")
+world = ExtResource("5_ujaao")
+metadata/_custom_type_script = "uid://byc2o40s28y72"
+
+[sub_resource type="Resource" id="Resource_qonv2"]
+script = ExtResource("6_0ee7v")
+outcome = SubResource("Resource_ud7qa")
+metadata/_custom_type_script = "uid://b4mnktbvbsywn"
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_knkth"]
 _surfaces = [{
@@ -947,7 +961,7 @@ shadow_enabled = true
 
 [node name="PortalToScene" parent="." unique_id=534343936 instance=ExtResource("2_ajwj3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6986465, -0.13629402, -53.466484)
-scene = 0
+Condition_Resource = SubResource("Resource_qonv2")
 
 [node name="the_forest" type="Node3D" parent="." unique_id=933143828]
 transform = Transform3D(0.455, 0, 0, 0, 0.455, 0, 0, 0, 0.455, 0, 0, 0)

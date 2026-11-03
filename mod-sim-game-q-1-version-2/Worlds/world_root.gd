@@ -3,6 +3,7 @@ extends Node3D
 @export var world0 : PackedScene
 @export var world1 : PackedScene
 @export var world2 : PackedScene
+@export var world3 : PackedScene
 @export var player_scene : PackedScene
 var current : Node3D = null
 var current_world : int = 0
@@ -24,6 +25,9 @@ func change_scene(world):
 	elif world == 2:
 		load_scene(world2)
 		current_world = 2
+	elif world == 3:
+		load_scene(world3)
+		current_world = 3
 
 func load_scene(arg: PackedScene):
 	var new_world = arg.instantiate()
@@ -34,12 +38,11 @@ func load_scene(arg: PackedScene):
 	if current.has_method("hi"):
 		if current.hi() != null:
 			player.global_transform = current.hi()
-	
-	
+
 func remove_current():
 	if current:
 		current.queue_free()
-	
+
 func store(who, who2, what):
 	if dict.has(who):
 		dict[who][who2] = what
@@ -71,8 +74,7 @@ func check_event(condition : Conditional):
 		return true
 	else:
 		return false
-		
-		
+
 func push_event(condition : Conditional):
 	if condition in cond:
 		pass

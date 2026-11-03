@@ -1,11 +1,6 @@
 [gd_scene format=3 uid="uid://bl1846ulp4kkk"]
 
-[ext_resource type="Script" uid="uid://fxck8ygo5a8w" path="res://scripts/portal_to_scene.gd" id="1_qonv2"]
-[ext_resource type="Script" uid="uid://c8rja1civjbhk" path="res://scripts/Resources/World_Select.gd" id="2_q2rw4"]
-
-[sub_resource type="Resource" id="Resource_dr4d3"]
-script = ExtResource("2_q2rw4")
-metadata/_custom_type_script = "uid://c8rja1civjbhk"
+[ext_resource type="Script" uid="uid://dlm55v5q7aiyh" path="res://scripts/Resources/Teleporter.gd" id="1_4be6k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o2cj4"]
 
@@ -14,9 +9,8 @@ metadata/_custom_type_script = "uid://c8rja1civjbhk"
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kclpp"]
 albedo_color = Color(0.32243413, 1, 0.33139193, 1)
 
-[node name="PortalToScene" type="Area3D" unique_id=534343936]
-script = ExtResource("1_qonv2")
-scene = SubResource("Resource_dr4d3")
+[node name="PortalToScene" type="StaticBody3D" unique_id=1865707797]
+script = ExtResource("1_4be6k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=909434015]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -26,5 +20,3 @@ shape = SubResource("CapsuleShape3D_o2cj4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_27g7l")
 surface_material_override/0 = SubResource("StandardMaterial3D_kclpp")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -6,13 +6,14 @@
 [ext_resource type="Script" uid="uid://c8rja1civjbhk" path="res://scripts/Resources/World_Select.gd" id="3_v3h04"]
 [ext_resource type="Script" uid="uid://byc2o40s28y72" path="res://scripts/Resources/Outcome_Test_2.gd" id="4_11s56"]
 
-[sub_resource type="Resource" id="Resource_4c3fi"]
+[sub_resource type="Resource" id="Resource_q2rw4"]
 script = ExtResource("3_v3h04")
+scene = 1
 metadata/_custom_type_script = "uid://c8rja1civjbhk"
 
 [sub_resource type="Resource" id="Resource_kqnsd"]
 script = ExtResource("4_11s56")
-location = SubResource("Resource_4c3fi")
+world = SubResource("Resource_q2rw4")
 metadata/_custom_type_script = "uid://byc2o40s28y72"
 
 [resource]

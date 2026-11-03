@@ -1,10 +1,10 @@
 extends Outcome
 class_name Teleport
 
-@export var location : WorldSelect
+@export var world : WorldSelect
 
 func action():
-	print("hi guys")
-	pass
+	print("teleport")
+	WorldRoot.change_scene(world.scene)
 func stop():
 	pass

@@ -10,6 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://dor3ptb5k8f31" path="res://Connor_Stuff/Voleybah.dae" id="6_0d5s4"]
 [ext_resource type="PackedScene" uid="uid://bpoq7p3myaic7" path="res://Connor_Stuff/Water.dae" id="7_ed2ha"]
 [ext_resource type="PackedScene" uid="uid://bl1846ulp4kkk" path="res://Scenes/portal_to_scene.tscn" id="10_rc7si"]
+[ext_resource type="Script" uid="uid://u050qwvys5ys" path="res://scripts/Resources/Conditional.gd" id="11_sgskt"]
+[ext_resource type="Script" uid="uid://byc2o40s28y72" path="res://scripts/Resources/Outcome_Test_2.gd" id="12_lu6qe"]
+[ext_resource type="Resource" uid="uid://b5mw5uh7ejtvm" path="res://scripts/Resources/Resource_saves/World_0.tres" id="13_m2b3e"]
+[ext_resource type="Script" uid="uid://b4mnktbvbsywn" path="res://scripts/Resources/Conditions.gd" id="14_kv445"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y37t0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -57,6 +61,16 @@ size = Vector3(2.9997559, 1, 0.12060547)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_adxfr"]
 radius = 0.56176203
+
+[sub_resource type="Resource" id="Resource_87bj7"]
+script = ExtResource("12_lu6qe")
+world = ExtResource("13_m2b3e")
+metadata/_custom_type_script = "uid://byc2o40s28y72"
+
+[sub_resource type="Resource" id="Resource_35daw"]
+script = ExtResource("14_kv445")
+outcome = SubResource("Resource_87bj7")
+metadata/_custom_type_script = "uid://b4mnktbvbsywn"
 
 [node name="TheWholeBeach" type="Node3D" unique_id=1657441180 node_paths=PackedStringArray("spawn")]
 script = ExtResource("1_rc7si")
@@ -239,7 +253,7 @@ shape = SubResource("SphereShape3D_adxfr")
 
 [node name="PortalToScene" parent="." unique_id=534343936 instance=ExtResource("10_rc7si")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.372229, -0.9736433, -15.653139)
-scene = 0
+Condition_Resource = SubResource("Resource_35daw")
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=149682984]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.301466, 0, -12.075728)

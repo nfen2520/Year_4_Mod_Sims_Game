@@ -12,6 +12,9 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_kclpp"]
 radius = 2.5644531
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_km1lx"]
+radius = 0.74121094
+
 [node name="Player" type="CharacterBody3D" unique_id=1186603845 node_paths=PackedStringArray("interact", "shoot", "dot", "bar")]
 script = ExtResource("1_rkbax")
 bullet = ExtResource("2_g6k8r")
@@ -85,6 +88,12 @@ theme_override_font_sizes/font_size = 25
 text = "0"
 script = ExtResource("5_qjkh3")
 
+[node name="Area3D" type="Area3D" parent="." unique_id=1071313927]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1092147683]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_km1lx")
+
 [connection signal="dialogue_start" from="." to="Dialogue_Manager" method="_on_player_dialogue_start"]
 [connection signal="light" from="." to="Dialogue_Manager" method="_on_player_light"]
 [connection signal="pause" from="." to="PauseMenu" method="_on_player_pause"]
@@ -96,3 +105,4 @@ script = ExtResource("5_qjkh3")
 [connection signal="menu" from="Dialogue_Manager" to="PauseMenu" method="_on_dialogue_manager_menu"]
 [connection signal="pause" from="Dialogue_Manager" to="." method="_on_dialogue_manager_pause"]
 [connection signal="play" from="Dialogue_Manager" to="." method="_on_dialogue_manager_play"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

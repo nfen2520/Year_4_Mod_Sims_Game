@@ -5,6 +5,7 @@ class_name Placeholder
 var yes : bool = true
 
 func collect():
+	yes = true
 	for i in Condition_Resource.condition:
 		if not WorldRoot.check_event(i):
 			print("hi")
