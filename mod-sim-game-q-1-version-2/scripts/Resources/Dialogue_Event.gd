@@ -8,7 +8,7 @@ func collect():
 	yes = true
 	test()
 	if yes:
-		return Condition_Resource.outcome.action()
+		return Condition_Resource.outcome.action(1)
 
 func exit():
 	yes = true

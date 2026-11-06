@@ -11,4 +11,4 @@ func collect():
 			print("hi")
 			yes = false
 	if yes:
-		Condition_Resource.outcome.action()
+		Condition_Resource.outcome.action(1)

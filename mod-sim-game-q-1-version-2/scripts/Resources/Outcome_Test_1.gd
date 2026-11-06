@@ -3,7 +3,7 @@ class_name push
 
 @export var give : Conditional
 
-func action():
+func action(arg):
 	WorldRoot.push_event(give)
 	pass
 

@@ -136,6 +136,7 @@ func _play():
 
 
 func _on_area_3d_body_entered(body):
-	if body is Mover:
-		print("im stupid")
+	if body is Telewe:
+		body.collect()
+	if body is Collectionable:
 		body.collect()

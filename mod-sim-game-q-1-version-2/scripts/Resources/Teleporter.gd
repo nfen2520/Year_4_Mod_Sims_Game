@@ -1,5 +1,5 @@
 extends Node
-class_name Mover
+class_name Telewe
 
 @export var Condition_Resource : Conditions
 var yes : bool = true
@@ -12,4 +12,4 @@ func collect():
 			yes = false
 	if yes:
 		print("yo")
-		Condition_Resource.outcome.action()
+		Condition_Resource.outcome.action(1)

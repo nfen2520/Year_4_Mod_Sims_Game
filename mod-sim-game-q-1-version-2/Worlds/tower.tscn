@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://dlm55v5q7aiyh" path="res://scripts/Resources/Teleporter.gd" id="11_kqnsd"]
 [ext_resource type="Script" uid="uid://b4mnktbvbsywn" path="res://scripts/Resources/Conditions.gd" id="11_uf183"]
 [ext_resource type="Script" uid="uid://byc2o40s28y72" path="res://scripts/Resources/Outcome_Test_2.gd" id="13_4c3fi"]
+[ext_resource type="PackedScene" uid="uid://074nntd3hgrr" path="res://Scenes/Collectable_body.tscn" id="17_4c3fi"]
+[ext_resource type="Script" uid="uid://b1vmupg4beiyk" path="res://scripts/Resources/Outcomes/Collection.gd" id="18_xlqcp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cejfp"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -28,6 +30,11 @@ sky_material = SubResource("ProceduralSkyMaterial_cejfp")
 background_mode = 2
 sky = SubResource("Sky_x43jg")
 glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.65125984, 0.46268657, 0.52515733, 1)
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.04
+volumetric_fog_albedo = Color(0.24351591, 0.07531486, 0.07531486, 1)
 
 [sub_resource type="Resource" id="Resource_km1lx"]
 script = ExtResource("7_flexi")
@@ -95,6 +102,17 @@ script = ExtResource("11_uf183")
 outcome = SubResource("Resource_jehlo")
 metadata/_custom_type_script = "uid://b4mnktbvbsywn"
 
+[sub_resource type="Resource" id="Resource_8jpo6"]
+script = ExtResource("18_xlqcp")
+value = 6
+metadata/_custom_type_script = "uid://b1vmupg4beiyk"
+
+[sub_resource type="Resource" id="Resource_xlqcp"]
+script = ExtResource("11_uf183")
+condition = Array[ExtResource("10_jehlo")]([ExtResource("9_e1vb3")])
+outcome = SubResource("Resource_8jpo6")
+metadata/_custom_type_script = "uid://b4mnktbvbsywn"
+
 [node name="Tower" type="Node3D" unique_id=857543120 node_paths=PackedStringArray("spawn")]
 script = ExtResource("1_j10ut")
 spawn = NodePath("Marker3D")
@@ -144,3 +162,7 @@ Condition_Resource = SubResource("Resource_eeytn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.894373, 0.8487234, 10.762308)
 script = ExtResource("7_wrukm")
 Condition_Resource = SubResource("Resource_e1vb3")
+
+[node name="StaticBody3D" parent="." unique_id=766753295 instance=ExtResource("17_4c3fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.221138, 0.19658744, -3.5362463)
+Condition_Resource = SubResource("Resource_xlqcp")
