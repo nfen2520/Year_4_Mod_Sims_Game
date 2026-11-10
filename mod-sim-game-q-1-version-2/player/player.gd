@@ -14,7 +14,6 @@ enum World{
 var player = self
 @export var dot: CanvasLayer
 @onready var camera = %Camera3D
-@export var bar : Label
 signal dialogue_start(file: String)
 var SPEED = 5.5
 signal pause
@@ -52,7 +51,6 @@ func _ready():
 
 
 func _load(saved_data):
-	print("load")
 	player.set_position(saved_data["player_pos"])
 	player.rotate_y(saved_data["player_y"] - player.rotation.y)
 	camera.rotate_x(saved_data["camera_x"] - camera.rotation.x)
@@ -115,8 +113,6 @@ func _on_player_reach_body_entered(body):
 		path = body.collect()
 		dialogue = true
 		interact.show()
-	if body.is_in_group("Collectable"):
-		print("hola")
 	if body is Placeholder:
 		body.collect()
 func _on_player_reach_body_exited(body):
@@ -127,11 +123,9 @@ func _on_player_reach_body_exited(body):
 		
 func _pause():
 	dot.visible = false
-	bar.visible = false
 	
 func _play():
 	dot.visible = true
-	bar.visible = true
 	get_tree().paused = false
 
 

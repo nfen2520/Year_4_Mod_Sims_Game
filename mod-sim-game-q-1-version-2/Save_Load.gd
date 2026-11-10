@@ -9,7 +9,6 @@ func _load():
 	var file2 = FileAccess.open("user://save_world.dat", FileAccess.READ)
 	var saved_dict = file2.get_var()
 	WorldRoot.set_save(saved_dict)
-	print(str(saved_dict))
 	file2.close()
 	var file = FileAccess.open("user://savegame.dat", FileAccess.READ)
 	var saved_data = file.get_var()

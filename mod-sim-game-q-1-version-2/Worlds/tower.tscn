@@ -32,7 +32,6 @@ sky = SubResource("Sky_x43jg")
 glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.65125984, 0.46268657, 0.52515733, 1)
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.04
 volumetric_fog_albedo = Color(0.24351591, 0.07531486, 0.07531486, 1)
 
@@ -132,10 +131,6 @@ material = ExtResource("1_7ik0a")
 
 [node name="Apple" parent="." unique_id=679075548 groups=["Collectable"] instance=ExtResource("4_x43jg")]
 transform = Transform3D(0.999852, -0.0055982242, 0.016267037, 0.0048060096, 0.9988195, 0.04833896, -0.016518442, -0.04825363, 0.99869853, 7.5369787, 0.26211214, 7.523609)
-
-[node name="Apple2" parent="." unique_id=1872325421 groups=["Collectable"] instance=ExtResource("4_x43jg")]
-transform = Transform3D(4.014449, -0.0210198, 0.063064866, 0.021022392, 4.0149446, 0, -0.063064, 0.0003302054, 4.0145035, -9.260652, 0.8381505, 7.7585936)
-value = 6
 
 [node name="newTree" parent="." unique_id=397061814 instance=ExtResource("4_cejfp")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.463109, -0.15127724, -8.913364)
