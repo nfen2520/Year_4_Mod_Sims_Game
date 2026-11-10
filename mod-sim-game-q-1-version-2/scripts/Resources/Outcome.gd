@@ -3,7 +3,7 @@ extends Resource
 class_name Outcome
 
 @abstract
-func action(arg)
+func action(_arg)
 
 @abstract
 func stop()

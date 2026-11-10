@@ -3,8 +3,7 @@ class_name Dialogue_Return
 
 @export_file("*.json") var jsonsrc
 
-func action(arg):
-	print("hi")
+func action(_arg):
 	return jsonsrc
 
 func stop():

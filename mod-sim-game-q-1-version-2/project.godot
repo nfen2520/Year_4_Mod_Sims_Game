@@ -13,7 +13,7 @@ config_version=5
 config/name="Mod_Sim_Game_Q1"
 run/main_scene="uid://bmr6wgjx5ihnu"
 config/features=PackedStringArray("4.7", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://b8incp6kwiqwo"
 
 [autoload]
 

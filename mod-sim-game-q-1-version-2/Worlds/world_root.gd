@@ -14,6 +14,7 @@ var cond : Array = []
 func _ready():
 	EventBus.save_scene.connect(store)
 	EventBus.picked_up.connect(score)
+	dict["score"] = 0
 	
 func change_scene(world):
 	if world == 0:
@@ -63,11 +64,19 @@ func set_save(arg):
 	dict = arg
 	change_scene(dict["world"])
 
-func start_game():
-	player = player_scene.instantiate()
-	add_child(player)
-	change_scene(0)
+func create_game(ball):
+	if not ball:
+		if player:
+			get_tree().paused = false
+			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+			player.queue_free()
+			current.queue_free()
+	else:
+		player = player_scene.instantiate()
+		add_child(player)
+		change_scene(0)
 	pass
+	
 
 func check_event(condition : Conditional):
 	if condition in cond:
@@ -81,4 +90,3 @@ func push_event(condition : Conditional):
 	else:
 		cond.append(condition)
 	dict["Conditions"] = cond
-	print(str(cond))

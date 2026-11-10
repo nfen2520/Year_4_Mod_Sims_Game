@@ -948,8 +948,9 @@ shadow_mesh = SubResource("ArrayMesh_qscsy")
 [sub_resource type="BoxShape3D" id="BoxShape3D_xt7u3"]
 size = Vector3(252.17296, 50.633545, 1)
 
-[node name="Forest_Scene" type="Node3D" unique_id=847844160]
+[node name="Forest_Scene" type="Node3D" unique_id=847844160 node_paths=PackedStringArray("spawn")]
 script = ExtResource("1_3xaso")
+spawn = NodePath("Marker3D")
 me = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1774286599]

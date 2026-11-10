@@ -3,7 +3,6 @@ extends Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	set_text("0")
 	EventBus.picked_up.connect(add_score)
 	EventBus.move_scene.connect(set_score)
 
