@@ -27,8 +27,8 @@ corner_detail = 5
 bg_color = Color(0.8682848, 0.7071745, 0.4969556, 1)
 
 [resource]
-Button/colors/font_color = Color(0.67259043, 0.6810063, 0.76306057, 1)
-Button/colors/font_hover_color = Color(0.8156727, 0.83170116, 1, 1)
+Button/colors/font_color = Color(0.8025197, 0.82226765, 1, 1)
+Button/colors/font_hover_color = Color(0.67540175, 0.6901382, 0.84855527, 1)
 Button/colors/font_outline_color = Color(0.03182572, 0.031208534, 0.13171524, 1)
 Button/colors/font_pressed_color = Color(0.67259043, 0.6810063, 0.76306057, 1)
 Button/constants/outline_size = 2
