@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://6vt2jr10vwk6"]
 
-[ext_resource type="ArrayMesh" uid="uid://buec7uobbsww2" path="res://scripts/Crab Game/Leaves2.obj" id="1_7cmys"]
+[ext_resource type="ArrayMesh" uid="uid://buec7uobbsww2" path="res://Eduardo_Stuff/objects/Crab Game/Leaves2.obj" id="1_7cmys"]
 [ext_resource type="Script" uid="uid://lfc654ogx50b" path="res://Worlds/interactable.gd" id="1_ligs6"]
-[ext_resource type="ArrayMesh" uid="uid://qpquwtdoe62t" path="res://scripts/Crab Game/Trunk3.obj" id="2_ligs6"]
+[ext_resource type="ArrayMesh" uid="uid://qpquwtdoe62t" path="res://Eduardo_Stuff/objects/Crab Game/Trunk3.obj" id="2_ligs6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_40vw2"]
 albedo_color = Color(0.19232938, 0.57891816, 0.17980987, 1)

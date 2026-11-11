@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://p73fyh2x6ins"]
 
-[ext_resource type="Script" uid="uid://c1ge32r0rm7ys" path="res://Scenes/pause_menu.gd" id="1_wrwfu"]
-[ext_resource type="Theme" uid="uid://cyr1bxl2qb5ju" path="res://scripts/Themes/Theme_1_Red.tres" id="2_wrwfu"]
+[ext_resource type="Script" uid="uid://c1ge32r0rm7ys" path="res://New Scripts/Menus/pause_menu.gd" id="1_wrwfu"]
+[ext_resource type="Theme" uid="uid://cyr1bxl2qb5ju" path="res://Assets/Themes/Theme_1_Red.tres" id="2_wrwfu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxnax"]
 bg_color = Color(0.71893907, 0.6972954, 1, 0.1882353)

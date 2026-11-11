@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bl1846ulp4kkk"]
 
-[ext_resource type="Script" uid="uid://dlm55v5q7aiyh" path="res://scripts/Resources/Teleporter.gd" id="1_4be6k"]
+[ext_resource type="Script" uid="uid://dlm55v5q7aiyh" path="res://New Scripts/Event_Test/Teleporter.gd" id="1_4be6k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o2cj4"]
 

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bvfpkendh4ai8"]
 
 [ext_resource type="Script" uid="uid://br6to3cwe0aq" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="PackedScene" uid="uid://b2qtvxnnhpro1" path="res://scripts/bullet.tscn" id="2_g6k8r"]
+[ext_resource type="PackedScene" uid="uid://b2qtvxnnhpro1" path="res://New Scenes/Weapons/bullet.tscn" id="2_g6k8r"]
 [ext_resource type="PackedScene" uid="uid://p73fyh2x6ins" path="res://Worlds/pause_menu.tscn" id="2_yw30f"]
 [ext_resource type="Texture2D" uid="uid://bgq853321pwek" path="res://player/reticle.png" id="3_g1dw6"]
-[ext_resource type="PackedScene" uid="uid://d34dyvc7kpft2" path="res://Scenes/Dialogue/dialogue_manager.tscn" id="3_yw30f"]
+[ext_resource type="PackedScene" uid="uid://d34dyvc7kpft2" path="res://New Scenes/Menus/dialogue_manager.tscn" id="3_yw30f"]
 [ext_resource type="Script" uid="uid://cvb03blghax34" path="res://player/score_value.gd" id="5_qjkh3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kclpp"]

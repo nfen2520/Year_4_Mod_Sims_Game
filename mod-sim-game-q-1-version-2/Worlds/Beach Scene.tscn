@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://dor3ptb5k8f31" path="res://Connor_Stuff/Voleybah.dae" id="6_0d5s4"]
 [ext_resource type="PackedScene" uid="uid://bpoq7p3myaic7" path="res://Connor_Stuff/Water.dae" id="7_ed2ha"]
 [ext_resource type="PackedScene" uid="uid://bl1846ulp4kkk" path="res://Scenes/portal_to_scene.tscn" id="10_rc7si"]
-[ext_resource type="Script" uid="uid://u050qwvys5ys" path="res://scripts/Resources/Conditional.gd" id="11_sgskt"]
-[ext_resource type="Script" uid="uid://byc2o40s28y72" path="res://scripts/Resources/Outcome_Test_2.gd" id="12_lu6qe"]
-[ext_resource type="Resource" uid="uid://b5mw5uh7ejtvm" path="res://scripts/Resources/Resource_saves/World_0.tres" id="13_m2b3e"]
-[ext_resource type="Script" uid="uid://b4mnktbvbsywn" path="res://scripts/Resources/Conditions.gd" id="14_kv445"]
+[ext_resource type="Script" uid="uid://u050qwvys5ys" path="res://New Scripts/Resources/Conditions/Conditional.gd" id="11_sgskt"]
+[ext_resource type="Script" uid="uid://byc2o40s28y72" path="res://New Scripts/Resources/Outcomes/Outcome_Test_2.gd" id="12_lu6qe"]
+[ext_resource type="Resource" uid="uid://b5mw5uh7ejtvm" path="res://New Scripts/Resources/Standard/world_selects/World_0.tres" id="13_m2b3e"]
+[ext_resource type="Script" uid="uid://b4mnktbvbsywn" path="res://New Scripts/Resources/Conditions/Conditions.gd" id="14_kv445"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_y37t0"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

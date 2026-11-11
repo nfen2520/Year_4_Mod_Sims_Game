@@ -1,0 +1,49 @@
+[gd_resource type="Theme" format=3 uid="uid://cyr1bxl2qb5ju"]
+
+[ext_resource type="FontFile" uid="uid://p2n1c0t084cj" path="res://Assets/Fonts/Super Squad.ttf" id="1_8egrx"]
+[ext_resource type="FontFile" uid="uid://dn7efltkjunbx" path="res://Assets/Fonts/Super Squad (2).ttf" id="2_0cwxx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1m6rn"]
+bg_color = Color(0.92941177, 0.2627451, 0.30980393, 1)
+border_width_bottom = 11
+border_color = Color(0.6709894, 0.17663491, 0.17663491, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_38s4r"]
+bg_color = Color(0.92941177, 0.2627451, 0.30980393, 1)
+border_width_top = 10
+border_color = Color(0.67058825, 0.1764706, 0.1764706, 0)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g66kr"]
+bg_color = Color(0.8682848, 0.7071745, 0.4969556, 1)
+
+[resource]
+Button/colors/font_color = Color(0.8025197, 0.82226765, 1, 1)
+Button/colors/font_hover_color = Color(0.67540175, 0.6901382, 0.84855527, 1)
+Button/colors/font_outline_color = Color(0.03182572, 0.031208534, 0.13171524, 1)
+Button/colors/font_pressed_color = Color(0.67259043, 0.6810063, 0.76306057, 1)
+Button/constants/outline_size = 2
+Button/font_sizes/font_size = 24
+Button/fonts/font = ExtResource("1_8egrx")
+Button/styles/hover = SubResource("StyleBoxFlat_1m6rn")
+Button/styles/normal = SubResource("StyleBoxFlat_1m6rn")
+Button/styles/pressed = SubResource("StyleBoxFlat_38s4r")
+Label/colors/font_color = Color(0.7758514, 0.78794026, 0.9143204, 1)
+Label/colors/font_outline_color = Color(0.069304325, 0.064321935, 0.21720988, 1)
+Label/colors/font_shadow_color = Color(0.09803922, 0.05882353, 0.15294118, 0.5254902)
+Label/constants/outline_size = 14
+Label/constants/shadow_offset_x = -3
+Label/constants/shadow_offset_y = 10
+Label/constants/shadow_outline_size = 2
+Label/font_sizes/font_size = 37
+Label/fonts/font = ExtResource("2_0cwxx")
+Panel/styles/panel = SubResource("StyleBoxFlat_g66kr")
