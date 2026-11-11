@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cr1udw86skljf" path="res://scripts/Themes/pixil-frame-0 (1).png" id="3_ce3w2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n45e2"]
-bg_color = Color(0.9143204, 0.81064814, 0.56539494, 0.58431375)
+bg_color = Color(0.94509804, 0.7254902, 0.4392157, 0.75686276)
 
 [node name="main_menu" type="Control" unique_id=233660472]
 layout_mode = 3
@@ -144,7 +144,7 @@ texture = ExtResource("3_1ehe0")
 flip_h = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
