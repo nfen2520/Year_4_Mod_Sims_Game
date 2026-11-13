@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://p73fyh2x6ins"]
+
+[ext_resource type="Script" uid="uid://c1ge32r0rm7ys" path="res://Scripts/Menus/pause_menu.gd" id="1_wrwfu"]
+[ext_resource type="Theme" uid="uid://cyr1bxl2qb5ju" path="res://Assets/Themes/Theme_1_Red.tres" id="2_wrwfu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wxnax"]
+bg_color = Color(0.71893907, 0.6972954, 1, 0.1882353)
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1859757965]
+script = ExtResource("1_wrwfu")
+
+[node name="Panel" type="Panel" parent="." unique_id=419695903]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_wrwfu")
+theme_override_styles/panel = SubResource("StyleBoxFlat_wxnax")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1101660485]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = 229.0
+offset_right = 151.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="Continue" type="Button" parent="Panel/VBoxContainer" unique_id=1474019510]
+layout_mode = 2
+text = "Continue Game"
+
+[node name="Save" type="Button" parent="Panel/VBoxContainer" unique_id=1448318653]
+layout_mode = 2
+text = "Save Game"
+
+[node name="load" type="Button" parent="Panel/VBoxContainer" unique_id=181509804]
+layout_mode = 2
+text = "Load"
+
+[node name="ExitMenu" type="Button" parent="Panel/VBoxContainer" unique_id=104596210]
+layout_mode = 2
+text = "Exit to Menu
+
+"
+
+[node name="Exit" type="Button" parent="Panel/VBoxContainer" unique_id=49286803]
+layout_mode = 2
+text = "Exit Game"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ExitMenu" to="." method="_on_exit_menu_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

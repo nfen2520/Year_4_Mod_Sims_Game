@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://q2bhx334ymou"]
+
+[ext_resource type="Script" uid="uid://b6lqxxt4qysst" path="res://Scripts/BackEnd/world_root.gd" id="1_jq7qd"]
+[ext_resource type="PackedScene" uid="uid://bvol2kte0bjsr" path="res://Scenes/Worlds/tower.tscn" id="2_3gqq3"]
+[ext_resource type="PackedScene" uid="uid://iggyo35vq0r4" path="res://Scenes/Worlds/Forest.tscn" id="3_qbxax"]
+[ext_resource type="PackedScene" uid="uid://cxdywhmbeb3ey" path="res://Scenes/Worlds/Beach Scene.tscn" id="4_uu85v"]
+[ext_resource type="PackedScene" uid="uid://bcapyiflurqlj" path="res://Scenes/Worlds/Crab_City.tscn" id="5_ytjxp"]
+[ext_resource type="PackedScene" uid="uid://bvfpkendh4ai8" path="res://Scenes/Player/player.tscn" id="6_jq7qd"]
+[ext_resource type="PackedScene" uid="uid://cao3lessf0hit" path="res://Scenes/BackEnd/save_load.tscn" id="7_kifjg"]
+
+[node name="World_Root" type="Node3D" unique_id=942558004]
+script = ExtResource("1_jq7qd")
+world0 = ExtResource("2_3gqq3")
+world1 = ExtResource("3_qbxax")
+world2 = ExtResource("4_uu85v")
+world3 = ExtResource("5_ytjxp")
+player_scene = ExtResource("6_jq7qd")
+
+[node name="SaveLoad" parent="." unique_id=1586215929 instance=ExtResource("7_kifjg")]

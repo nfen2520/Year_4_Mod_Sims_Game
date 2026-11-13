@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3y1sc3m83fof"
+path="res://.godot/imported/mob_ko.wav-f0d6e18e95b7cabfb46da7a1dd03c513.sample"
+
+[deps]
+
+source_file="res://Old-Unused/Old Tutorial/mob/mob_ko.wav"
+dest_files=["res://.godot/imported/mob_ko.wav-f0d6e18e95b7cabfb46da7a1dd03c513.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

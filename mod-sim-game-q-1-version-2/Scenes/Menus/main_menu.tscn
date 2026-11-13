@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bmr6wgjx5ihnu"]
+
+[ext_resource type="Script" uid="uid://6q5rkb0wsyx3" path="res://Scripts/Menus/main_menu.gd" id="1_aur2u"]
+[ext_resource type="Texture2D" uid="uid://cr1udw86skljf" path="res://Assets/Art/pixil-frame-0 (1).png" id="2_5wi6m"]
+[ext_resource type="Theme" uid="uid://cyr1bxl2qb5ju" path="res://Assets/Themes/Theme_1_Red.tres" id="3_chkef"]
+[ext_resource type="Texture2D" uid="uid://b8incp6kwiqwo" path="res://Assets/Art/pixil-frame-0.png" id="4_neey8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n45e2"]
+bg_color = Color(0.94509804, 0.7254902, 0.4392157, 0.75686276)
+
+[node name="main_menu" type="Control" unique_id=233660472]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aur2u")
+
+[node name="TextureRect5" type="TextureRect" parent="." unique_id=1605125953]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5wi6m")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1448240783]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_chkef")
+theme_override_styles/panel = SubResource("StyleBoxFlat_n45e2")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1165008871]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -124.25
+offset_right = 160.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 17
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=1602788325]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_chkef")
+text = "Start Game"
+
+[node name="Load" type="Button" parent="VBoxContainer" unique_id=539266768]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_chkef")
+text = "Load Game"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1232506674]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_chkef")
+text = "Options
+"
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=896109795]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_chkef")
+text = "Exit"
+
+[node name="Label" type="Label" parent="." unique_id=494506919]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 70.0
+offset_right = 115.0
+offset_bottom = 163.0
+grow_horizontal = 2
+theme = ExtResource("3_chkef")
+text = "4 Crab-Drants"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2011861952]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -305.0
+offset_top = 34.0
+offset_right = -114.0
+offset_bottom = 157.0
+grow_horizontal = 0
+texture = ExtResource("4_neey8")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1308288367]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -959.0
+offset_top = 456.0
+offset_right = -768.0
+offset_bottom = 579.0
+grow_horizontal = 0
+texture = ExtResource("4_neey8")
+
+[node name="TextureRect4" type="TextureRect" parent="." unique_id=1790912654]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -331.0
+offset_top = 303.0
+offset_right = -140.0
+offset_bottom = 426.0
+grow_horizontal = 0
+texture = ExtResource("4_neey8")
+flip_h = true
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=901149839]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1122.0
+offset_top = 52.0
+offset_right = -931.0
+offset_bottom = 175.0
+grow_horizontal = 0
+texture = ExtResource("4_neey8")
+flip_h = true
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="VBoxContainer/Load" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

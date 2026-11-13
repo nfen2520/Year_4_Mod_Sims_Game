@@ -25,6 +25,17 @@ WorldRoot="*uid://q2bhx334ymou"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[file_customization]
+
+folder_colors={
+"res://Assets/": "blue",
+"res://Old-Unused/": "gray",
+"res://Old-Unused/Old Scenes/": "green",
+"res://Old-Unused/Old Scripts/": "yellow",
+"res://Scenes/": "green",
+"res://Scripts/": "yellow"
+}
+
 [global_group]
 
 Interactable=""

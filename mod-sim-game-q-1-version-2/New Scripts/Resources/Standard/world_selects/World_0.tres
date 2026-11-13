@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="WorldSelect" format=3 uid="uid://b5mw5uh7ejtvm"]
-
-[ext_resource type="Script" uid="uid://c8rja1civjbhk" path="res://New Scripts/Resources/Standard/World_Select.gd" id="1_eia7g"]
-
-[resource]
-script = ExtResource("1_eia7g")
-metadata/_custom_type_script = "uid://c8rja1civjbhk"

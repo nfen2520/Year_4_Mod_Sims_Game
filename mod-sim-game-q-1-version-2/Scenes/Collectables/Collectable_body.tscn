@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://074nntd3hgrr"]
+
+[ext_resource type="Script" uid="uid://82lacwahjn0l" path="res://Scripts/Event_Test/Collectionable.gd" id="1_cil3c"]
+[ext_resource type="PackedScene" uid="uid://dyiha87euljtd" path="res://Assets/Models/APPle.dae" id="2_1m6rn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_450tu"]
+size = Vector3(0.35549927, 0.34570313, 0.34472656)
+
+[node name="Collectionable" type="StaticBody3D" unique_id=766753295 groups=["Collectable"]]
+script = ExtResource("1_cil3c")
+
+[node name="APPle" parent="." unique_id=908810366 instance=ExtResource("2_1m6rn")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1432078050]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.009071767, 0.032526493, 0.009170294)
+shape = SubResource("BoxShape3D_450tu")
