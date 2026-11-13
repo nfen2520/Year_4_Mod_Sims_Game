@@ -5,6 +5,7 @@ class_name push
 
 func action(_arg):
 	WorldRoot.push_event(give)
+	EventBus.Top_Text.emit("you got " + give.text, 4)
 	pass
 
 func stop():

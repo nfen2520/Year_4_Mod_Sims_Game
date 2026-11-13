@@ -91,14 +91,14 @@ condition = Array[ExtResource("6_pcxnb")]([ExtResource("14_o385r")])
 outcome = SubResource("Resource_ck0kl")
 metadata/_custom_type_script = "uid://b4mnktbvbsywn"
 
-[sub_resource type="Resource" id="Resource_jehlo"]
+[sub_resource type="Resource" id="Resource_w7wr7"]
 script = ExtResource("16_oygck")
 give = ExtResource("14_o385r")
 metadata/_custom_type_script = "uid://rvs3me5ps17x"
 
 [sub_resource type="Resource" id="Resource_e1vb3"]
 script = ExtResource("8_jff7c")
-outcome = SubResource("Resource_jehlo")
+outcome = SubResource("Resource_w7wr7")
 metadata/_custom_type_script = "uid://b4mnktbvbsywn"
 
 [sub_resource type="Resource" id="Resource_8jpo6"]
@@ -136,6 +136,7 @@ transform = Transform3D(0.999852, -0.0055982242, 0.016267037, 0.0048060096, 0.99
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.463109, -0.15127724, -8.913364)
 script = ExtResource("5_6cemu")
 Condition_Resource = SubResource("Resource_kclpp")
+display_text = "Press E to talk"
 
 [node name="PortalToScene" parent="." unique_id=534343936 instance=ExtResource("9_8j68c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3194895, 0, 0)

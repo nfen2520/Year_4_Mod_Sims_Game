@@ -1,4 +1,4 @@
 extends Resource
 class_name Conditional
 
-@export var test : String = " "
+@export var text : String = " "

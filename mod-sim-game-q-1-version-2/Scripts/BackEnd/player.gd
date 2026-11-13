@@ -9,7 +9,7 @@ enum World{
 	}
 @export var id : World
 @export var bullet : PackedScene
-@export var interact: CanvasLayer
+@export var interact: Text_Display
 @export var shoot : Marker3D
 var player = self
 @export var dot: CanvasLayer
@@ -42,7 +42,6 @@ func _input(event):
 		
 
 func _ready():
-	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	add_to_group("Player")
 	light.emit(false)
@@ -112,14 +111,15 @@ func _on_player_reach_body_entered(body):
 	if body is Dialogue:
 		path = body.collect()
 		dialogue = true
-		interact.show()
+		interact.display(body.display_text)
+
 	if body is Placeholder:
 		body.collect()
 func _on_player_reach_body_exited(body):
 	if body is Dialogue:
 		path = null
 		dialogue = false
-		interact.hide()
+		interact.stop()
 		
 func _pause():
 	dot.visible = false

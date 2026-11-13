@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bt60apdm80ecb"]
+
+[ext_resource type="Script" uid="uid://ueb258hopbpo" path="res://Scripts/Menus/pop_up_label.gd" id="1_m7ks1"]
+
+[node name="Label2" type="Label" unique_id=203078272]
+theme_override_font_sizes/font_size = 30
+text = " "
+script = ExtResource("1_m7ks1")

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://br6to3cwe0aq" path="res://Scripts/BackEnd/player.gd" id="1_dd0ac"]
 [ext_resource type="PackedScene" uid="uid://b2qtvxnnhpro1" path="res://Scenes/Weapons/bullet.tscn" id="2_0u5uq"]
 [ext_resource type="PackedScene" uid="uid://p73fyh2x6ins" path="res://Old-Unused/Old Scenes/pause_menu.tscn" id="3_jlvik"]
+[ext_resource type="Script" uid="uid://c6tdrrq1gx37n" path="res://Scenes/Player/top_text.gd" id="4_0u5uq"]
 [ext_resource type="Texture2D" uid="uid://bgq853321pwek" path="res://Assets/Art/reticle.png" id="4_dd0ac"]
 [ext_resource type="Script" uid="uid://cvb03blghax34" path="res://Scripts/BackEnd/score_value.gd" id="5_jhyir"]
 [ext_resource type="PackedScene" uid="uid://d34dyvc7kpft2" path="res://Scenes/Menus/dialogue_manager.tscn" id="6_74mp2"]
@@ -18,9 +19,9 @@ radius = 0.74121094
 [node name="Player" type="CharacterBody3D" unique_id=1186603845 node_paths=PackedStringArray("interact", "shoot", "dot")]
 script = ExtResource("1_dd0ac")
 bullet = ExtResource("2_0u5uq")
-interact = NodePath("CanvasLayer")
+interact = NodePath("UI/TopText")
 shoot = NodePath("Camera3D/Marker3D")
-dot = NodePath("Pointer")
+dot = NodePath("UI")
 
 [node name="PauseMenu" parent="." unique_id=1859757965 instance=ExtResource("3_jlvik")]
 process_mode = 3
@@ -38,9 +39,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5672088, 0)
 [node name="Marker3D" type="Marker3D" parent="Camera3D" unique_id=416482580]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020521104, -0.02493155, -0.58847976)
 
-[node name="Pointer" type="CanvasLayer" parent="." unique_id=1634817102]
+[node name="UI" type="CanvasLayer" parent="." unique_id=1634817102]
 
-[node name="Reticle" type="TextureRect" parent="Pointer" unique_id=1892826390]
+[node name="TopText" type="CanvasLayer" parent="UI" unique_id=1477464275]
+script = ExtResource("4_0u5uq")
+
+[node name="Control" type="Control" parent="UI/TopText" unique_id=1779503960]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TopText/Control" unique_id=425190510]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 430.0
+offset_right = -430.0
+offset_bottom = 134.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="UI/TopText/Control/VBoxContainer" unique_id=1269148137]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+
+[node name="Timer" type="Timer" parent="UI/TopText" unique_id=982506071]
+
+[node name="Pointer" type="TextureRect" parent="UI" unique_id=1892826390]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -55,7 +83,7 @@ grow_vertical = 2
 texture = ExtResource("4_dd0ac")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="Pointer" unique_id=1660653156]
+[node name="Score" type="Label" parent="UI" unique_id=1660653156]
 offset_left = 34.0
 offset_top = 23.0
 offset_right = 129.0
@@ -70,28 +98,14 @@ script = ExtResource("5_jhyir")
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.0222962, 0)
 shape = SubResource("CylinderShape3D_kclpp")
 
-[node name="Dialogue_Manager" parent="." unique_id=1306491053 node_paths=PackedStringArray("pause_menu") instance=ExtResource("6_74mp2")]
-pause_menu = NodePath("../PauseMenu")
+[node name="PlayerColide" type="Area3D" parent="." unique_id=1071313927]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1477464275]
-visible = false
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=1269148137]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -131.0
-offset_right = 131.0
-offset_bottom = 51.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 30
-text = "Press E to interact"
-
-[node name="Area3D" type="Area3D" parent="." unique_id=1071313927]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1092147683]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerColide" unique_id=1092147683]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_km1lx")
+
+[node name="Dialogue_Manager" parent="." unique_id=1306491053 node_paths=PackedStringArray("pause_menu") instance=ExtResource("6_74mp2")]
+pause_menu = NodePath("../PauseMenu")
 
 [connection signal="dialogue_start" from="." to="Dialogue_Manager" method="_on_player_dialogue_start"]
 [connection signal="light" from="." to="Dialogue_Manager" method="_on_player_light"]
@@ -99,9 +113,10 @@ shape = SubResource("CylinderShape3D_km1lx")
 [connection signal="pause" from="PauseMenu" to="." method="_on_pause_menu_pause"]
 [connection signal="play" from="PauseMenu" to="." method="_on_pause_menu_play"]
 [connection signal="save" from="PauseMenu" to="." method="_on_pause_menu_save"]
+[connection signal="timeout" from="UI/TopText/Timer" to="UI/TopText" method="_on_timer_timeout"]
 [connection signal="body_entered" from="PlayerReach" to="." method="_on_player_reach_body_entered"]
 [connection signal="body_exited" from="PlayerReach" to="." method="_on_player_reach_body_exited"]
+[connection signal="body_entered" from="PlayerColide" to="." method="_on_area_3d_body_entered"]
 [connection signal="menu" from="Dialogue_Manager" to="PauseMenu" method="_on_dialogue_manager_menu"]
 [connection signal="pause" from="Dialogue_Manager" to="." method="_on_dialogue_manager_pause"]
 [connection signal="play" from="Dialogue_Manager" to="." method="_on_dialogue_manager_play"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
