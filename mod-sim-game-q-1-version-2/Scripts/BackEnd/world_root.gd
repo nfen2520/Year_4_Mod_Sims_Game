@@ -5,6 +5,7 @@ extends Node3D
 @export var world2 : PackedScene
 @export var world3 : PackedScene
 @export var player_scene : PackedScene
+@export var main_menu : PackedScene
 var current : Node3D = null
 var current_world : int = 0
 var dict : Dictionary = {}
@@ -68,7 +69,7 @@ func create_game(ball):
 	if not ball:
 		if player:
 			get_tree().paused = false
-			get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+			get_tree().change_scene_to_file("res://Scenes/Menus/main_menu.tscn")
 			player.queue_free()
 			current.queue_free()
 	else:

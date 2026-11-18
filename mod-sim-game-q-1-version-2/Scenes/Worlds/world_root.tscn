@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cxdywhmbeb3ey" path="res://Scenes/Worlds/Beach Scene.tscn" id="4_uu85v"]
 [ext_resource type="PackedScene" uid="uid://bcapyiflurqlj" path="res://Scenes/Worlds/Crab_City.tscn" id="5_ytjxp"]
 [ext_resource type="PackedScene" uid="uid://bvfpkendh4ai8" path="res://Scenes/Player/player.tscn" id="6_jq7qd"]
+[ext_resource type="PackedScene" uid="uid://bmr6wgjx5ihnu" path="res://Scenes/Menus/main_menu.tscn" id="7_3gqq3"]
 [ext_resource type="PackedScene" uid="uid://cao3lessf0hit" path="res://Scenes/BackEnd/save_load.tscn" id="7_kifjg"]
 
 [node name="World_Root" type="Node3D" unique_id=942558004]
@@ -15,5 +16,6 @@ world1 = ExtResource("3_qbxax")
 world2 = ExtResource("4_uu85v")
 world3 = ExtResource("5_ytjxp")
 player_scene = ExtResource("6_jq7qd")
+main_menu = ExtResource("7_3gqq3")
 
 [node name="SaveLoad" parent="." unique_id=1586215929 instance=ExtResource("7_kifjg")]
